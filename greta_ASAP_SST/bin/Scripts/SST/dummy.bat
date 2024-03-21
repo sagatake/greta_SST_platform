@@ -1,0 +1,1 @@
+activemq producer --destination queue://SSI --message Examples\DemoEN\response\generate.xml --messageCount 1

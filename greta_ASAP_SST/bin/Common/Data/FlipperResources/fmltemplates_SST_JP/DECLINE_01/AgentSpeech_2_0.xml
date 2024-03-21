@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<fml-apml>
+	<bml>
+		<speech id="s1" start="0.0" language="french" voice="marytts" type="SAPI4" text="">
+		
+			<description level="1" type="gretabml">
+				<reference>tmp/from-fml-apml.pho</reference>
+			</description>
+ 
+            <tm id="tm0"/>
+                Commencons !
+            <tm id="tm1"/>
+                Refuses ma demande de maniere correcte.        
+            <tm id="tm2"/>
+                Je vais commencer en premier. 
+            <tm id="tm3"/>
+				Excuses moi, j’ai besoin de ton aide. 			
+            <tm id="tm4"/>
+				J’ai totalement oublie de donner ces papiers a l’accueil et j’aimerais bien que tu le fasses.        
+            <tm id="tm5"/>
+				Tu ferais ca pour moi?
+            
+            <boundary type="LL" id="b1" start="s1:tm1" end="s1:tm1+0.75"/>
+            <boundary type="LL" id="b2" start="s1:tm2" end="s1:tm2+0.75"/>
+            <boundary type="LL" id="b2" start="s1:tm3" end="s1:tm3+2.0"/>
+            <boundary type="LL" id="b2" start="s1:tm4" end="s1:tm4+0.75"/>
+            <boundary type="LL" id="b2" start="s1:tm5" end="s1:tm5+1.0"/>
+        
+		</speech>
+	</bml>
+</fml-apml>

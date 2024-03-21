@@ -1,0 +1,7 @@
+import * from "autodesk.material"
+
+material agentBReal_Autodesk_Body : base {
+	set_texture_alias diffuseMap agentbreal/color.jpg
+	set_texture_alias celShadingMap agentbreal/color.jpg
+}
+

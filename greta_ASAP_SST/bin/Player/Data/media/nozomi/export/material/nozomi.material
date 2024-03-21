@@ -1,0 +1,38 @@
+material "_Body"
+{
+	technique _Body_technique
+	{
+		pass _Body_standard
+		{
+			shading phong
+			ambient 1 1 1 1
+			diffuse 1 1 1 1
+			specular 0.5 0.5 0.5 1 110.209
+			emissive 0 0 0 1
+
+			texture_unit _Body_Diffuse#0
+			{
+				texture nozomi_color.jpg
+				tex_coord_set 0
+				colour_op modulate
+			}
+		}
+	}
+}
+material "_Eye_trans"
+{
+	technique _Eye_trans_technique
+	{
+		pass _Eye_trans_standard
+		{
+			shading phong
+			ambient 0 0 0 0.1405
+			diffuse 0.09092 0.09092 0.09092 0.1405
+			specular 0.95868 0.95868 0.95868 1 110.209
+			emissive 0 0 0 0.1405
+
+			scene_blend alpha_blend
+			depth_write off
+		}
+	}
+}

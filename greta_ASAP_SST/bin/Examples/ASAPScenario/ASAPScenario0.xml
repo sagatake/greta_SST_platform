@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<fml-apml>
+	<bml>
+		<speech id="s1" start="0.0" language="french" voice="marytts" type="SAPI4" text="">
+			<description level="1" type="gretabml">
+				<reference>tmp/from-fml-apml.pho</reference>
+			</description>
+				
+			<tm id="tm1"/>
+				Bonjour,
+			<tm id="tm2"/>
+				Je m'appelle Camille et je suis thérapeute.
+			<tm id="tm3"/>
+				Je suis là pour vous aider.
+			<tm id="tm4"/>
+				Racontez-moi quelque chose qui vous a dérangé ces derniers temps?
+			<tm id="tm5"/>
+				Quelque chose de difficile à gérer,
+			<tm id="tm6"/>
+				de douloureux,
+			<tm id="tm7"/>
+				 de pénible.
+			<tm id="tm8"/>
+
+			<boundary type="LL" id="" start="s1:tm3" end="s1:tm3+1"/>
+			<boundary type="LL" id="" start="s1:tm4" end="s1:tm4+1"/>
+			<boundary type="LL" id="" start="s1:tm5" end="s1:tm5+1"/>
+		</speech>
+	</bml>
+</fml-apml>
+
+

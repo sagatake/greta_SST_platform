@@ -1,0 +1,1160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TorsoGestures xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../Common/Data/xml/TorsoGestures.xsd">
+<!--
+	SagittalTilt is a forward/backward leaning mouvement in the sagittal plan (around x axis)
+	VerticalTorsion is a leftward/rightward rotation around the vertical axis (around y axis)
+	LateralRoll is a lateral flexion to the leftward/rightward in the lateral plan (around z axis)
+	Collapse
+-->
+
+<!--
+	min="0.0" and max="1.0" of the rotation value means that the real value of rotation must be between the value of min and max in degree (specified in the file TorsoIntervals.xml)
+	In the SagittalTilt, the rotation in the forward direction correspond to a forward rotation
+						 the rotation in the backward direction correspond to a backward rotation
+	In the VerticalTorsion, the rotation in the leftward direction correspond to a leftward rotation
+							the rotation in the rightward direction correspond to a rightward rotation
+	In the LateralRoll, the rotation in the rightward direction correspond to a rightward rotation
+						the rotation in the leftward direction correspond to a leftward rotation
+	***for the torso gestures (<torso>)
+	the symbolic value of rotation for SagittalTilt, VerticalTorsion or LateralRoll is defined by : amount*max
+		where
+				max is the maximum symbolic value of the correspondant direction
+				amount means how intense is the torso movement, 0 means immeasurable small; 0.5 means"moderate"; 1 means maximally large
+	To obtain the real value of rotation, the symbolic value must be multiplied by |max_degree| which is defined in the TorsoIntervals.xml file (with respect to the human anatomy)
+	***for the torso postures (<torsoDirectionShift>)
+	the symbolic value of rotation for SagittalTilt, VerticalTorsion or LateralRoll are equal to the corresponding amount
+	To obtain the real value of rotation, the symbolic value must be multiplied by |max_degree| which is defined in the TorsoIntervals.xml file (with respect to the human anatomy)
+-->
+
+	<!-- Used in the lexicon -->
+
+	<torso id="BodyRecline" lexeme="BodyRecline" repetition="2" amount="0.5">
+		<KeyPoint type="strokeStart">
+			<Rotations>
+				<vt2 x="0.040480717" y="0.0" z="0.0" w="0.9944926"/>
+				<vt5 x="-0.053954312" y="0.0" z="0.0" w="0.990216"/>
+				<vt12 x="-0.0419712204" y="0.0" z="0.0" w="0.99280864"/>
+				<vl5 x="-0.042467473" y="0.0" z="0.0" w="0.9921977"/>
+			</Rotations>
+		</KeyPoint>
+	</torso>
+
+	<torso id="BodyLean" lexeme="BodyLean" repetition="2" amount="0.5">
+		<KeyPoint type="strokeStart">
+			<Rotations>
+				<vt2 x="-0.040480717" y="0.0" z="0.0" w="0.9944926"/>
+				<vt5 x="0.053954312" y="0.0" z="0.0" w="0.990216"/>
+				<vt12 x="0.0419712204" y="0.0" z="0.0" w="0.99280864"/>
+				<vl5 x="0.042467473" y="0.0" z="0.0" w="0.9921977"/>
+			</Rotations>
+		</KeyPoint>
+	</torso>
+
+	<torso id="LinearNeutralFrontalSwing" lexeme="FrontalSwing" repetition="2" amount="0.5">
+		<KeyPoint type="strokeEnd">
+			<SagittalTilt direction="Forward" min="0.0" max="1.0"><!-- amount*max--></SagittalTilt>
+		</KeyPoint>
+	</torso>
+
+	<torso id="LinearForwardBackwardSwing" lexeme="ForwardBackwardSwing" repetition="2" amount="0.5">
+		<KeyPoint type="strokeStart">
+			<SagittalTilt direction="Forward" min="0.0" max="1.0"><!-- amount*max--></SagittalTilt>
+		</KeyPoint>
+		<KeyPoint type="strokeEnd">
+			<SagittalTilt direction="Backward" min="0.0" max="1.0"><!--amount*max--></SagittalTilt>
+		</KeyPoint>
+	</torso>
+
+	<torso id="CurvedNeutralFrontalSwing" lexeme="CurvedFrontalSwing" repetition="2" amount="0.5">
+		<KeyPoint type="strokeEnd">
+			<SagittalTilt direction="Forward" min="0.0" max="1.0"></SagittalTilt>
+		</KeyPoint>
+	</torso>
+
+	<torso id="LinearRLLateralSwing" lexeme="LateralSwing" repetition="2" amount="0.5">
+		<KeyPoint type="strokeStart">
+			<LateralRoll direction="Rightward" min="0.0" max="1.0"><!--amount*max--></LateralRoll>
+		</KeyPoint>
+		<KeyPoint type="strokeEnd">
+			<LateralRoll direction="Leftward" min="0.0" max="1.0"><!--amount*max--></LateralRoll>
+		</KeyPoint>
+	</torso>
+
+	<torso id="CurvedRLLateralSwing" lexeme="CurvedLateralSwing" repetition="2" amount="0.5">
+		<KeyPoint type="strokeStart">
+			<LateralRoll direction="Rightward" min="0.0" max="1.0"></LateralRoll>
+		</KeyPoint>
+		<KeyPoint type="strokeEnd">
+			<LateralRoll direction="Leftward" min="0.0" max="1.0"></LateralRoll>
+		</KeyPoint>
+	</torso>
+
+	<torso id="LinearRLVerticalSwing" lexeme="VerticalSwing" repetition="2" amount="0.5">
+		<KeyPoint type="strokeStart">
+			<VerticalTorsion direction="Rightward" min="0.0" max="1.0"><!--amount*max--></VerticalTorsion>
+		</KeyPoint>
+		<KeyPoint type="strokeEnd">
+			<VerticalTorsion direction="Leftward" min="0.0" max="1.0"><!--amount*max--></VerticalTorsion>
+		</KeyPoint>
+	</torso>
+
+	<torso id="jingtry" lexeme="jingtry" repetition="2" amount="0.5">
+		<KeyPoint type="strokeStart">
+			<Rotations>
+				<vt2 x="0.06994197" y="0.004987734" z="-3.4971276E-4" w="0.99753857"/>
+				<vt5 x="0.06994285" y="0.0" z="0.0" w="0.997551"/>
+				<vt12 x="0.07991469" y="0.0" z="0.0" w="0.99680173"/>
+				<vl5 x="0.044984818" y="0.0" z="0.0" w="0.9989877"/>
+			</Rotations>
+		</KeyPoint>
+		<KeyPoint type="strokeEnd">
+			<Rotations>
+				<vt2 x="-0.12963252" y="0.0049577886" z="6.48168E-4" w="0.9915495"/>
+				<vt5 x="-0.12963414" y="0.0" z="0.0" w="0.9915619"/>
+				<vt12 x="0.08987855" y="0.0" z="0.0" w="0.9959527"/>
+				<vl5 x="0.17902958" y="0.0" z="0.0" w="0.9838437"/>
+			</Rotations>
+		</KeyPoint>
+	</torso>
+
+	<torso id="TrunkRockingForwardsAndBackwards" lexeme="TrunkRockingForwardsAndBackwards" repetition="2" amount="0.5">
+		<KeyPoint type ="strokeStart">
+			<Rotations>
+				<vt2 x="0.0" y="0.0" z="0.0" w="1.0"/>
+				<vt5 x="0.0" y="0.0" z="0.0" w="1.0"/>
+				<vt12 x="0.0" y="0.0" z="0.0" w="1.0"/>
+				<vl5 x="0.0049999794" y="0.0" z="0.0" w="0.99998754"/>
+			</Rotations>
+		</KeyPoint>
+		<KeyPoint type ="stroke">
+			<Rotations>
+				<vt2 x="0.12963414" y="0.0" z="0.0" w="0.9915619"/>
+				<vt5 x="-0.09983342" y="0.0" z="0.0" w="0.9950042"/>
+				<vt12 x="-0.064954236" y="0.0" z="0.0" w="0.99788827"/>
+				<vl5 x="-0.12963414" y="0.0" z="0.0" w="0.9915619"/>
+			</Rotations>
+		</KeyPoint>
+		<KeyPoint type="stroke">
+			<Rotations>
+				<vt2 x="0.0" y="0.0" z="0.0" w="1.0"/>
+				<vt5 x="0.0" y="0.0" z="0.0" w="1.0"/>
+				<vt12 x="0.0" y="0.0" z="0.0" w="1.0"/>
+				<vl5 x="0.0049999794" y="0.0" z="0.0" w="0.99998754"/>
+			</Rotations>
+		</KeyPoint>
+		<KeyPoint type="stroke">
+			<Rotations>
+				<vt2 x="-0.06994285" y="0.0" z="0.0" w="0.997551"/>
+				<vt5 x="0.0" y="0.0" z="0.0" w="1.0"/>
+				<vt12 x="0.059964005" y="0.0" z="0.0" w="0.99820054"/>
+				<vl5 x="0.12963414" y="0.0" z="0.0" w="0.9915619"/>
+			</Rotations>
+		</KeyPoint>
+		<KeyPoint type="strokeEnd">
+			<Rotations>
+				<vt2 x="0.0" y="0.0" z="0.0" w="1.0"/>
+				<vt5 x="0.0" y="0.0" z="0.0" w="1.0"/>
+				<vt12 x="0.0" y="0.0" z="0.0" w="1.0"/>
+				<vl5 x="0.0049999794" y="0.0" z="0.0" w="0.99998754"/>
+			</Rotations>
+		</KeyPoint>
+	</torso>
+
+	<torso id="TrunkStraighteningBackwards" lexeme="TrunkStraighteningBackwards" repetition="2" amount="0.5">
+		<KeyPoint type="strokeStart">
+			<Rotations>
+				<vt2 x="-0.10480717" y="0.0" z="0.0" w="0.9944926"/>
+				<vt5 x="0.13954312" y="0.0" z="0.0" w="0.990216"/>
+				<vt12 x="0.119712204" y="0.0" z="0.0" w="0.99280864"/>
+				<vl5 x="0.12467473" y="0.0" z="0.0" w="0.9921977"/>
+			</Rotations>
+		</KeyPoint>
+		<KeyPoint type="strokeEnd">
+			<Rotations>
+				<vt2 x="0.0" y="0.0" z="0.0" w="1.0"/>
+				<vt5 x="0.0" y="0.0" z="0.0" w="1.0"/>
+				<vt12 x="0.0" y="0.0" z="0.0" w="1.0"/>
+				<vl5 x="0.0049999794" y="0.0" z="0.0" w="0.99998754"/>
+			</Rotations>
+		</KeyPoint>
+	</torso>
+
+	<torso id="TrunkThrowingBackwardsAndForwards" lexeme="TrunkThrowingBackwardsAndForwards" repetition="2" amount="0.5">
+		<KeyPoint type="strokeStart">
+			<Rotations>
+				<vt2 x="0.0" y="0.0" z="0.0" w="1.0"/>
+				<vt5 x="0.0" y="0.0" z="0.0" w="1.0"/>
+				<vt12 x="0.0" y="0.0" z="0.0" w="1.0"/>
+				<vl5 x="0.0049999794" y="0.0" z="0.0" w="0.99998754"/>
+			</Rotations>
+		</KeyPoint>
+		<KeyPoint type="stroke">
+			<Rotations>
+				<vt2 x="0.08489768" y="0.0" z="0.0" w="0.9963897"/>
+				<vt5 x="-0.07492971" y="0.0" z="0.0" w="0.9971888"/>
+				<vt12 x="-0.09983342" y="0.0" z="0.0" w="0.9950042"/>
+				<vl5 x="-0.11474669" y="0.0" z="0.0" w="0.9933948"/>
+			</Rotations>
+		</KeyPoint>
+		<KeyPoint type="strokeEnd">
+			<Rotations>
+				<vt2 x="0.0" y="0.0" z="0.0" w="1.0"/>
+				<vt5 x="0.0" y="0.0" z="0.0" w="1.0"/>
+				<vt12 x="0.0" y="0.0" z="0.0" w="1.0"/>
+				<vl5 x="0.0049999794" y="0.0" z="0.0" w="0.99998754"/>
+			</Rotations>
+		</KeyPoint>
+	</torso>
+
+	<torso id="TrunkThrowingBackwards" lexeme="TrunkThrowingBackwardsAndForwards" repetition="2" amount="0.5">
+		<KeyPoint type="strokeStart">
+			<Rotations>
+				<vt2 x="0.0" y="0.0" z="0.0" w="1.0"/>
+				<vt5 x="0.0" y="0.0" z="0.0" w="1.0"/>
+				<vt12 x="0.0" y="0.0" z="0.0" w="1.0"/>
+				<vl5 x="0.0049999794" y="0.0" z="0.0" w="0.99998754"/>
+			</Rotations>
+		</KeyPoint>
+		<KeyPoint type="strokeEnd">
+			<Rotations>
+				<vt2 x="0.08489768" y="0.0" z="0.0" w="0.9963897"/>
+				<vt5 x="-0.07492971" y="0.0" z="0.0" w="0.9971888"/>
+				<vt12 x="-0.09983342" y="0.0" z="0.0" w="0.9950042"/>
+				<vl5 x="-0.11474669" y="0.0" z="0.0" w="0.9933948"/>
+			</Rotations>
+		</KeyPoint>
+	</torso>
+
+	<torso id="TrunkTiltingForwards" lexeme="TrunkTiltingForwards" repetition="2" amount="0.5">
+		<KeyPoint type="strokeStart">
+			<Rotations>
+				<vt2 x="0.0" y="0.0" z="0.0" w="1.0"/>
+				<vt5 x="0.0" y="0.0" z="0.0" w="1.0"/>
+				<vt12 x="0.0" y="0.0" z="0.0" w="1.0"/>
+				<vl5 x="0.0049999794" y="0.0" z="0.0" w="0.99998754"/>
+			</Rotations>
+		</KeyPoint>
+		<KeyPoint type="strokeEnd">
+			<Rotations>
+				<vt2 x="0.009999833" y="0.0" z="0.0" w="0.99995"/>
+				<vt5 x="0.0299955" y="0.0" z="0.0" w="0.99955004"/>
+				<vt12 x="0.04997917" y="0.0" z="0.0" w="0.99875027"/>
+				<vl5 x="0.07492971" y="0.0" z="0.0" w="0.9971888"/>
+			</Rotations>
+		</KeyPoint>
+	</torso>
+
+	<torso id="WeightShiftLeftToRight" lexeme="WeightShiftLeftToRight" repetition="2" amount="0.5">
+		<KeyPoint type="strokeStart">
+			<Rotations>
+				<vt2 x="0.0" y="0.0" z="0.0" w="1.0"/>
+				<vt5 x="0.0" y="0.0" z="0.0" w="1.0"/>
+				<vt12 x="0.0" y="0.0" z="0.0" w="1.0"/>
+				<vl5 x="0.0049999794" y="0.0" z="0.0" w="0.99998754"/>
+			</Rotations>
+		</KeyPoint>
+		<KeyPoint type="strokeEnd">
+			<Rotations>
+				<vt2 x="0.009999833" y="0.0" z="0.0" w="0.99995"/>
+				<vt5 x="0.0299955" y="0.0" z="0.0" w="0.99955004"/>
+				<vt12 x="0.04997917" y="0.0" z="0.0" w="0.99875027"/>
+				<vl5 x="0.07492971" y="0.0" z="0.0" w="0.9971888"/>
+			</Rotations>
+		</KeyPoint>
+	</torso>
+
+	<torso id="LeanLeftAndBack" lexeme="LeanLeftAndBack" repetition="2" amount="0.5">
+		<KeyPoint type="strokeStart">
+			<Rotations>
+				<vt2 x="0.0" y="0.0" z="0.0" w="1.0"/>
+				<vt5 x="0.0" y="0.0" z="0.0" w="1.0"/>
+				<vt12 x="0.0" y="0.0" z="0.0" w="1.0"/>
+				<vl5 x="0.0049999794" y="0.0" z="0.0" w="0.99998754"/>
+			</Rotations>
+		</KeyPoint>
+		<KeyPoint type ="stroke">
+			<Rotations>
+				<vt2 x="0.0" y="0.0" z="0.0" w="1.0"/>
+				<vt5 x="0.0" y="0.0" z="-0.10480717" w="0.9944926"/>
+				<vt12 x="0.0" y="0.0" z="-0.10480717" w="0.9944926"/>
+				<vl5 x="0.0" y="0.0" z="0.0" w="1.0"/>
+			</Rotations>
+		</KeyPoint>
+		<KeyPoint type="strokeEnd">
+			<Rotations>
+				<vt2 x="0.0" y="0.0" z="0.0" w="1.0"/>
+				<vt5 x="0.0" y="0.0" z="0.0" w="1.0"/>
+				<vt12 x="0.0" y="0.0" z="0.0" w="1.0"/>
+				<vl5 x="0.0049999794" y="0.0" z="0.0" w="0.99998754"/>
+			</Rotations>
+		</KeyPoint>
+	</torso>
+	
+	<torso id="Neutral" lexeme="Neutral" repetition="2" amount="0.5">
+		<KeyPoint type ="strokeEnd">
+		<Rotations>
+		<vt2 x= "0.0 " y= "0.0" z= "0.0" w="1.0"/>
+		<vc1 x= "0.0 " y= "0.0" z= "0.0" w="1.0"/>
+		<vt5 x= "0.0 " y= "0.0" z= "0.0" w="1.0"/>
+		<vt12 x= "0.0 " y= "0.0" z= "0.0" w="1.0"/>
+		<vl5 x= "0.0 " y= "0.0" z= "0.0" w="1.0"/>
+		</Rotations>
+</KeyPoint>
+	</torso>
+
+	<torso id="TurnLeftAndBack" lexeme="LeanLeftAndBack" repetition="2" amount="0.5">
+		<KeyPoint type="strokeStart">
+			<Rotations>
+				<vt2 x="0.0" y="0.0" z="0.0" w="1.0"/>
+				<vt5 x="0.0" y="0.0" z="0.0" w="1.0"/>
+				<vt12 x="0.0" y="0.0" z="0.0" w="1.0"/>
+				<vl5 x="0.0049999794" y="0.0" z="0.0" w="0.99998754"/>
+			</Rotations>
+		</KeyPoint>
+		<KeyPoint type ="stroke">
+			<Rotations>
+				<vt2 x="0.0" y="-0.06994285" z="0.0" w="0.997551"/>
+				<vt5 x="0.0" y="-0.054972276" z="0.0" w="0.9984879"/>
+				<vt12 x="0.0" y="-0.06994285" z="0.0" w="0.997551"/>
+				<vl5 x="4.244866E-4" y="-0.08489662" z="0.0049819276" w="0.9963772"/>
+			</Rotations>
+		</KeyPoint>
+		<KeyPoint type="strokeEnd">
+			<Rotations>
+				<vt2 x="0.0" y="0.0" z="0.0" w="1.0"/>
+				<vt5 x="0.0" y="0.0" z="0.0" w="1.0"/>
+				<vt12 x="0.0" y="0.0" z="0.0" w="1.0"/>
+				<vl5 x="0.0049999794" y="0.0" z="0.0" w="0.99998754"/>
+			</Rotations>
+		</KeyPoint>
+	</torso>
+	
+	
+
+	<torso id="MixtureOfSomePossibleMovements" lexeme="MixtureOfSomePossibleMovements" repetition="2" amount="0.5">
+		<KeyPoint type="strokeStart">
+			<Rotations>
+				<vt2 x="0.0" y="0.0" z="0.0" w="1.0"/>
+				<vt5 x="0.0" y="0.0" z="0.0" w="1.0"/>
+				<vt12 x="0.0" y="0.0" z="0.0" w="1.0"/>
+				<vl5 x="0.0049999794" y="0.0" z="0.0" w="0.99998754"/>
+			</Rotations>
+		</KeyPoint>
+		<KeyPoint type ="stroke">
+			<Rotations>
+				<vt2 x="-0.077619836" y="-0.20645729" z="0.07761985" w="0.97227865"/>
+				<vt5 x="0.0" y="0.0" z="0.0" w="1.0"/>
+				<vt12 x="0.0" y="0.0" z="0.0" w="1.0"/>
+				<vl5 x="0.0" y="0.0" z="0.0" w="1.0"/>
+			</Rotations>
+		</KeyPoint>
+		<KeyPoint type ="stroke">
+			<Rotations>
+				<vt2 x="-0.108755335" y="0.08892149" z="0.108755335" w="0.98409224"/>
+				<vt5 x="0.0" y="0.0" z="0.0" w="1.0"/>
+				<vt12 x="0.0" y="0.0" z="0.0" w="1.0"/>
+				<vl5 x="0.0" y="0.0" z="0.0" w="1.0"/>
+			</Rotations>
+		</KeyPoint>
+		<KeyPoint type="stroke">
+			<Rotations>
+				<vt2 x="0.0" y="0.0" z="0.0" w="1.0"/>
+				<vt5 x="0.0" y="0.0" z="0.0" w="1.0"/>
+				<vt12 x="0.0" y="0.0" z="0.0" w="1.0"/>
+				<vl5 x="0.0049999794" y="0.0" z="0.0" w="0.99998754"/>
+			</Rotations>
+		</KeyPoint>
+		<KeyPoint type="stroke">
+			<Rotations>
+				<vt2 x="0.0" y="0.0" z="0.0" w="1.0"/>
+				<vt5 x="0.09983342" y="0.0" z="0.0" w="0.9950042"/>
+				<vt12 x="0.0" y="0.09983342" z="0.0" w="0.9950042"/>
+				<vl5 x="0.09933467" y="0.09933467" z="-0.009966712" w="0.9900333"/>
+			</Rotations>
+		</KeyPoint>
+		<KeyPoint type="stroke">
+			<Rotations>
+				<vt2 x="0.0" y="0.0" z="0.0" w="1.0"/>
+				<vt5 x="0.09983342" y="0.0" z="0.0" w="0.9950042"/>
+				<vt12 x="0.0" y="0.09983342" z="0.0" w="0.9950042"/>
+				<vl5 x="0.108755335" y="0.08892149" z="-0.108755335" w="0.98409224"/>
+			</Rotations>
+		</KeyPoint>
+		<KeyPoint type ="stroke">
+			<Rotations>
+				<vt2 x="0.0" y="0.0" z="0.0" w="1.0"/>
+				<vt5 x="0.09983342" y="0.0" z="0.0" w="0.9950042"/>
+				<vt12 x="0.0" y="0.09983342" z="0.0" w="0.9950042"/>
+				<vl5 x="0.09933467" y="-0.009966712" z="-0.09933467" w="0.9900333"/>
+			</Rotations>
+		</KeyPoint>
+		<KeyPoint type ="stroke">
+			<Rotations>
+				<vt2 x="0.0" y="0.0" z="0.0" w="1.0"/>
+				<vt5 x="0.09983342" y="0.0" z="0.0" w="0.9950042"/>
+				<vt12 x="0.0" y="0.09983342" z="0.0" w="0.9950042"/>
+				<vl5 x="0.0" y="0.0" z="-0.09983342" w="0.9950042"/>
+			</Rotations>
+		</KeyPoint>
+		<KeyPoint type ="stroke">
+			<Rotations>
+				<vt2 x="0.0" y="0.0" z="0.0" w="1.0"/>
+				<vt5 x="0.09983342" y="0.0" z="0.0" w="0.9950042"/>
+				<vt12 x="0.0" y="-0.09983342" z="0.0" w="0.9950042"/>
+				<vl5 x="0.0" y="0.0" z="-0.09983342" w="0.9950042"/>
+			</Rotations>
+		</KeyPoint>
+		<KeyPoint type ="stroke">
+			<Rotations>
+				<vt2 x="0.0" y="0.0" z="0.0" w="1.0"/>
+				<vt5 x="0.09983342" y="0.0" z="0.0" w="0.9950042"/>
+				<vt12 x="-0.19767681" y="-0.0978434" z="-0.019833839" w="0.9751704"/>
+				<vl5 x="0.0" y="0.0" z="-0.09983342" w="0.9950042"/>
+			</Rotations>
+		</KeyPoint>
+		<KeyPoint type ="stroke">
+			<Rotations>
+				<vt2 x="0.0" y="0.0" z="0.0" w="1.0"/>
+				<vt5 x="0.0" y="0.0" z="0.0" w="1.0"/>
+				<vt12 x="0.0" y="0.0" z="0.0" w="1.0"/>
+				<vl5 x="0.0" y="0.0" z="0.0" w="1.0"/>
+			</Rotations>
+		</KeyPoint>
+		<KeyPoint type ="stroke">
+			<Rotations>
+				<vt2 x="0.0" y="-0.09983342" z="0.0" w="0.9950042"/>
+				<vt5 x="0.0" y="-0.09983342" z="0.0" w="0.9950042"/>
+				<vt12 x="0.0" y="0.09983342" z="0.0" w="0.9950042"/>
+				<vl5 x="-0.09933467" y="0.09933467" z="0.009966712" w="0.9900333"/>
+			</Rotations>
+		</KeyPoint>
+		<KeyPoint type ="stroke">
+			<Rotations>
+				<vt2 x="0.0" y="-0.09983342" z="0.0" w="0.9950042"/>
+				<vt5 x="0.0" y="0.09983342" z="0.0" w="0.9950042"/>
+				<vt12 x="0.0" y="0.09983342" z="0.0" w="0.9950042"/>
+				<vl5 x="-0.09933467" y="0.09933467" z="0.009966712" w="0.9900333"/>
+			</Rotations>
+		</KeyPoint>
+		<KeyPoint type ="stroke">
+			<Rotations>
+				<vt2 x="0.0" y="-0.09983342" z="0.0" w="0.9950042"/>
+				<vt5 x="0.0" y="0.09983342" z="0.0" w="0.9950042"/>
+				<vt12 x="0.0" y="0.09983342" z="0.0" w="0.9950042"/>
+				<vl5 x="-0.09933467" y="-0.09933467" z="-0.009966712" w="0.9900333"/>
+			</Rotations>
+		</KeyPoint>
+		<KeyPoint type ="strokeEnd">
+			<Rotations>
+				<vt2 x="0.0" y="0.0" z="0.0" w="1.0"/>
+				<vt5 x="0.0" y="0.0" z="0.0" w="1.0"/>
+				<vt12 x="0.0" y="0.0" z="0.0" w="1.0"/>
+				<vl5 x="0.0" y="0.0" z="0.0" w="1.0"/>
+			</Rotations>
+		</KeyPoint>
+	</torso>
+
+	<!-- *********************************************************************************-->
+	<!-- Torso Postures-->
+
+	<!-- Return to the neutral position -->
+	<torsoDirectionShift id="NeutralPosition">
+	</torsoDirectionShift>
+
+	<!-- Turn to object target -->
+	<torsoDirectionShift id="TargetTurn" target="id1">
+	</torsoDirectionShift>
+
+	<torsoDirectionShift id="collapse">
+		<Collapse direction="Forward" amount="0.5" min="0.0" max="1.0"></Collapse>
+		<!-- shoulders are involved-->
+	</torsoDirectionShift>
+
+	<torsoDirectionShift id="left_turn">
+		<VerticalTorsion direction="Leftward" amount="0.5" min="0.0" max="1.0"><!--vertical_amount--></VerticalTorsion>
+	</torsoDirectionShift>
+
+	<torsoDirectionShift id="right_turn">
+		<VerticalTorsion direction="Rightward" amount="0.5" min="0.0" max="1.0"><!--vertical_amount--></VerticalTorsion>
+	</torsoDirectionShift>
+
+	<torsoDirectionShift id="left_lean">
+		<LateralRoll direction="Leftward" amount="0.5" min="0.0" max="1.0"></LateralRoll>
+	</torsoDirectionShift>
+
+	<torsoDirectionShift id="right_lean">
+		<LateralRoll direction="Rightward" amount="0.5" min="0.0" max="1.0"></LateralRoll>
+	</torsoDirectionShift>
+
+	<torsoDirectionShift id="forward_lean">
+		<SagittalTilt direction="Forward" amount="0.5" min="0.0" max="1.0"></SagittalTilt>
+	</torsoDirectionShift>
+
+	<torsoDirectionShift id="backward_lean">
+		<SagittalTilt direction="Backward" amount="0.5" min="0.0" max="1.0"></SagittalTilt>
+	</torsoDirectionShift>
+
+	<!-- 	<torsoDirectionShift id="chest_backward">
+		<VerticalTorsion direction=""></VerticalTorsion>
+		<SagittalTilt direction=""></SagittalTilt>
+		<LateralRoll direction=""></LateralRoll>
+		<Collapse direction="backward"></Collapse>
+	</torsoDirectionShift> -->
+	
+	
+	<!-- NVBG TORSO GESTURE -->
+	
+	<!-- Fajrian Torso Gestures -->
+	<torso id="TorsoDoNothing" lexeme="TorsoDoNothing" repetition="2" amount="0.5">
+        <KeyPoint type ="strokeStart">
+            <Rotations>
+            <vt2 x= "0.0 " y= "0.0" z= "0.0" w="1.0"/>
+            <vt5 x= "0.0 " y= "0.0" z= "0.0" w="1.0"/>
+            <vt12 x= "0.0 " y= "0.0" z= "0.0" w="1.0"/>
+            <vl5 x= "0.0 " y= "0.0" z= "0.0" w="1.0"/>
+            </Rotations>
+        </KeyPoint>
+        <KeyPoint type ="strokeEnd">
+            <Rotations>
+            <vt2 x= "0.0 " y= "0.0" z= "0.0" w="1.0"/>
+            <vt5 x= "0.0 " y= "0.0" z= "0.0" w="1.0"/>
+            <vt12 x= "0.0 " y= "0.0" z= "0.0" w="1.0"/>
+            <vl5 x= "0.0 " y= "0.0" z= "0.0" w="1.0"/>
+            </Rotations>
+        </KeyPoint>
+        </torso>   
+	
+	<torso id="TorsoHeadDown" lexeme="TorsoHeadDown" repetition="2" amount="0.5">
+        <KeyPoint type ="strokeStart">
+            <Rotations>
+                <vt2 x= "0.0 " y= "0.0" z= "0.0" w="1.0"/>
+                <vt5 x= "0.0 " y= "0.0" z= "0.0" w="1.0"/>
+                <vt12 x= "0.0 " y= "0.0" z= "-0.004999979166692708" w="0.9999875000260416"/>
+                <vl5 x= "-0.004999979166692708 " y= "0.0" z= "0.0" w="0.9999875000260416"/>
+            </Rotations>
+        </KeyPoint>
+        <KeyPoint type ="strokeEnd">
+            <Rotations>
+                <vt2 x= "0.10480716882888248 " y= "0.0" z= "0.0" w="0.9944925627484974"/>
+                <vt5 x= "0.0 " y= "0.0" z= "0.0" w="1.0"/>
+                <vt12 x= "0.0 " y= "0.0" z= "0.0" w="1.0"/>
+                <vl5 x= "-0.004999979166692708 " y= "0.0" z= "0.0" w="0.9999875000260416"/>
+            </Rotations>
+        </KeyPoint>
+        </torso> 
+		
+	<torso id="TorsoHeadDown" lexeme="TorsoHeadDown" repetition="2" amount="0.5">
+        <KeyPoint type ="strokeStart">
+            <Rotations>
+                <vt2 x= "0.0 " y= "0.0" z= "0.0" w="1.0"/>
+                <vt5 x= "0.0 " y= "0.0" z= "0.0" w="1.0"/>
+                <vt12 x= "0.0 " y= "0.0" z= "-0.004999979166692708" w="0.9999875000260416"/>
+                <vl5 x= "-0.004999979166692708 " y= "0.0" z= "0.0" w="0.9999875000260416"/>
+            </Rotations>
+        </KeyPoint>
+        <KeyPoint type ="strokeEnd">
+            <Rotations>
+                <vt2 x= "0.10480716882888248 " y= "0.0" z= "0.0" w="0.9944925627484974"/>
+                <vt5 x= "0.0 " y= "0.0" z= "0.0" w="1.0"/>
+                <vt12 x= "0.0 " y= "0.0" z= "0.0" w="1.0"/>
+                <vl5 x= "-0.004999979166692708 " y= "0.0" z= "0.0" w="0.9999875000260416"/>
+            </Rotations>
+        </KeyPoint>
+        </torso>  
+	
+	        <torso id="TorsoHeadDown" lexeme="TorsoHeadDown" repetition="2" amount="0.5">
+        <KeyPoint type ="strokeStart">
+            <Rotations>
+                <vt2 x= "0.0 " y= "0.0" z= "0.0" w="1.0"/>
+                <vt5 x= "0.0 " y= "0.0" z= "0.0" w="1.0"/>
+                <vt12 x= "0.0 " y= "0.0" z= "-0.004999979166692708" w="0.9999875000260416"/>
+                <vl5 x= "-0.004999979166692708 " y= "0.0" z= "0.0" w="0.9999875000260416"/>
+            </Rotations>
+        </KeyPoint>
+        <KeyPoint type ="strokeEnd">
+            <Rotations>
+                <vt2 x= "0.10480716882888248 " y= "0.0" z= "0.0" w="0.9944925627484974"/>
+                <vt5 x= "0.0 " y= "0.0" z= "0.0" w="1.0"/>
+                <vt12 x= "0.0 " y= "0.0" z= "0.0" w="1.0"/>
+                <vl5 x= "-0.004999979166692708 " y= "0.0" z= "0.0" w="0.9999875000260416"/>
+            </Rotations>
+        </KeyPoint>
+        </torso>  
+		
+		<torso id="TorsoHeadDown" lexeme="TorsoHeadDown" repetition="2" amount="0.5">
+        <KeyPoint type ="strokeStart">
+            <Rotations>
+                <vt2 x= "0.0 " y= "0.0" z= "0.0" w="1.0"/>
+                <vt5 x= "0.0 " y= "0.0" z= "0.0" w="1.0"/>
+                <vt12 x= "0.0 " y= "0.0" z= "-0.004999979166692708" w="0.9999875000260416"/>
+                <vl5 x= "-0.004999979166692708 " y= "0.0" z= "0.0" w="0.9999875000260416"/>
+            </Rotations>
+        </KeyPoint>
+        <KeyPoint type ="strokeEnd">
+            <Rotations>
+                <vt2 x= "0.10480716882888248 " y= "0.0" z= "0.0" w="0.9944925627484974"/>
+                <vt5 x= "0.0 " y= "0.0" z= "0.0" w="1.0"/>
+                <vt12 x= "0.0 " y= "0.0" z= "0.0" w="1.0"/>
+                <vl5 x= "-0.004999979166692708 " y= "0.0" z= "0.0" w="0.9999875000260416"/>
+            </Rotations>
+        </KeyPoint>
+        </torso>  
+		
+		<torso id="TorsoLookUpLeft" lexeme="TorsoLookUpLeft" repetition="2" amount="0.5">
+        <KeyPoint type ="strokeEnd">
+            <Rotations>
+                <vt2 x= "-0.05851872097493388 " y= "0.21783692758917986" z= "0.013085922532427999" w="0.974141360843199"/>
+                <vt5 x= "0.0 " y= "0.0" z= "0.0" w="1.0"/>
+                <vt12 x= " 0.005" y= "0.001" z= "0.000" w="1.0"/>
+                <vl5 x= "0.004999979166692708 " y= "0.0" z= "0.0" w="0.9999875000260416"/>
+            </Rotations>
+        </KeyPoint>
+    </torso>
+	
+	 <torso id="TorsoLookDownLeft" lexeme="TorsoLookDownLeft" repetition="2" amount="0.5">
+        <KeyPoint type ="strokeStart">
+            <Rotations>
+                <vt2 x= "0.0 " y= "0.0" z= "0.0" w="1.0"/>
+                <vt5 x= "0.0 " y= "0.0" z= "0.0" w="1.0"/>
+                <vt12 x= "0.0 " y= "0.0" z= "0.0" w="1.0"/>
+                <vl5 x= "0.0 " y= "0.0" z= "0.0" w="1.0"/>
+            </Rotations>
+        </KeyPoint>
+        <KeyPoint type ="strokeEnd">
+            <Rotations>
+                <vt2 x= "0.0744347803949332 " y= "0.11442411458156738" z= "-0.008597935771853811" w="0.9906021708891242"/>
+                <vt5 x= "-0.004999916667083332 " y= "2.4999791667361107E-5" z= "-0.004999916667083332" w="0.9999750002083326"/>
+                <vt12 x= "0.0 " y= "0.004999979166692708" z= "0.0" w="0.9999875000260416"/>
+                <vl5 x= "0.0 " y= "0.0" z= "0.0" w="1.0"/>
+            </Rotations>
+        </KeyPoint>
+        </torso>  
+		
+	<!-- end Fajrian Torso Gestures -->
+	
+	<!-- Liu Torso Gestures -->
+	
+	<torso id="LeftSide" lexeme="LeftSide" repetition="1" amount="0.5">
+                
+                <KeyPoint type="strokeStart">
+                        <Rotations>
+                                <vt2 x= "-0.03225271409754671 " y= "-0.07605901343717056" z= "0.03225271409754671" w="0.9960595119477793"/>
+                                <vt5 x= "0.07563102243652545 " y= "-0.035821715131949095" z= "-0.13707523515050063" w="0.9870193174799804"/>
+                                <vt12 x= "-0.06828220207068988 " y= "-0.05052767064416911" z= "-0.06828220207068988" w="0.9940432768546998"/>
+                                <vl5 x= "0.0 " y= "0.0" z= "0.0" w="1.0"/>
+                        </Rotations>
+                </KeyPoint>
+        </torso>
+		
+	<torso id="LeftSide" lexeme="LeftSide" repetition="1" amount="0.5">
+                
+                <KeyPoint type="strokeStart">
+                        <Rotations>
+                                <vt2 x= "-0.03225271409754671 " y= "-0.07605901343717056" z= "0.03225271409754671" w="0.9960595119477793"/>
+                                <vt5 x= "0.07563102243652545 " y= "-0.035821715131949095" z= "-0.13707523515050063" w="0.9870193174799804"/>
+                                <vt12 x= "-0.06828220207068988 " y= "-0.05052767064416911" z= "-0.06828220207068988" w="0.9940432768546998"/>
+                                <vl5 x= "0.0 " y= "0.0" z= "0.0" w="1.0"/>
+                        </Rotations>
+                </KeyPoint>
+        </torso>
+	
+	<torso id="LeftBack" lexeme="LeftBack" repetition="1" amount="0.5">
+                
+                <KeyPoint type="strokeEnd">
+                        <Rotations>
+                                <vt2 x="-0.1" y="-0.1" z="0.0" w="1.0"/>
+                                <vt5 x="0.0" y="0.0" z="0.0" w="1.0"/>
+                                <vt12 x="0.0" y="0.0" z="0.0" w="1.0"/>
+                                <vl5 x="0.0" y="0.0" z="0.0" w="1.0"/>
+                        </Rotations>
+                </KeyPoint>
+        </torso>
+	
+	<torso id="LeftSide" lexeme="LeftSide" repetition="1" amount="0.5">
+                
+                <KeyPoint type="strokeStart">
+                        <Rotations>
+                                <vt2 x= "-0.03225271409754671 " y= "-0.07605901343717056" z= "0.03225271409754671" w="0.9960595119477793"/>
+                                <vt5 x= "0.07563102243652545 " y= "-0.035821715131949095" z= "-0.13707523515050063" w="0.9870193174799804"/>
+                                <vt12 x= "-0.06828220207068988 " y= "-0.05052767064416911" z= "-0.06828220207068988" w="0.9940432768546998"/>
+                                <vl5 x= "0.0 " y= "0.0" z= "0.0" w="1.0"/>
+                        </Rotations>
+                </KeyPoint>
+        </torso>
+	
+	<torso id="LeftSide" lexeme="LeftSide" repetition="1" amount="0.5">
+                
+                <KeyPoint type="strokeStart">
+                        <Rotations>
+                                <vt2 x= "-0.03225271409754671 " y= "-0.07605901343717056" z= "0.03225271409754671" w="0.9960595119477793"/>
+                                <vt5 x= "0.07563102243652545 " y= "-0.035821715131949095" z= "-0.13707523515050063" w="0.9870193174799804"/>
+                                <vt12 x= "-0.06828220207068988 " y= "-0.05052767064416911" z= "-0.06828220207068988" w="0.9940432768546998"/>
+                                <vl5 x= "0.0 " y= "0.0" z= "0.0" w="1.0"/>
+                        </Rotations>
+                </KeyPoint>
+        </torso>
+	
+	<torso id="LeftSide" lexeme="LeftSide" repetition="1" amount="0.5">
+                
+                <KeyPoint type="strokeStart">
+                        <Rotations>
+                                <vt2 x= "-0.03225271409754671 " y= "-0.07605901343717056" z= "0.03225271409754671" w="0.9960595119477793"/>
+                                <vt5 x= "0.07563102243652545 " y= "-0.035821715131949095" z= "-0.13707523515050063" w="0.9870193174799804"/>
+                                <vt12 x= "-0.06828220207068988 " y= "-0.05052767064416911" z= "-0.06828220207068988" w="0.9940432768546998"/>
+                                <vl5 x= "0.0 " y= "0.0" z= "0.0" w="1.0"/>
+                        </Rotations>
+                </KeyPoint>
+        </torso>
+		
+	<!-- end Liu Torso Gestures -->
+	
+	<!-- Jieyeon Torso Gestures -->
+	<torso id="IndicateLeft" lexeme="IndicateLeft" repetition="1" amount="0.5">
+                <KeyPoint type="strokeStart">
+                        <Rotations>
+                                <vt2 x= "0.044984814037660234 " y= "0.0" z= "0.0" w="0.9989876708478425"/>
+                                <vt5 x= "0.0 " y= "0.0" z= "0.0" w="1.0"/>
+                                <vt12 x= "0.058252846520270664 " y= "0.12279414033105482" z= "-0.03656703227787688" w="0.9900459873778752"/>
+                                <vl5 x= "0.0 " y= "0.0" z= "0.0" w="1.0"/>
+                        </Rotations>
+                </KeyPoint>
+        </torso>
+	
+	<torso id="IndicateRight" lexeme="IndicateRight" repetition="1" amount="0.5">
+                <KeyPoint type="strokeStart">
+                        <Rotations>
+                                <vt2 x= "0.044984814037660234 " y= "0.0" z= "0.0" w="0.9989876708478425"/>
+                                <vt5 x= "0.0 " y= "0.0" z= "0.0" w="1.0"/>
+                                <vt12 x= "0.058252846520270664 " y= "-0.12279414033105482" z= "0.03656703227787688" w="0.9900459873778752"/>
+                                <vl5 x= "0.0 " y= "0.0" z= "0.0" w="1.0"/>
+                        </Rotations>
+                </KeyPoint>
+        </torso>
+	
+	<torso id="Me" lexeme="Me" repetition="1" amount="0.5">
+                <KeyPoint type="stroke">
+                        <Rotations>
+                                <vt2 x= "0.1246747333852277 " y= "0.0" z= "0.0" w="0.9921976672293291"/>
+                                <vt5 x= "0.0 " y= "0.0" z= "0.0" w="1.0"/>
+                                <vt12 x= "-0.02448482851108012 " y= "0.020610914963147934" z= "-0.024484828511080123" w="0.999187758396763"/>
+                                <vl5 x= "0.0 " y= "0.0" z= "0.0" w="1.0"/>
+                        </Rotations>
+                </KeyPoint>
+        </torso>
+	
+	<torso id="Negative" lexeme="Negative" repetition="1" amount="0.5">
+                <KeyPoint type="strokeStart">
+                        <Rotations>
+                                <vt2 x= "0.1397400588622469 " y= "-0.006410860640036142" z= "0.026146555514775995" w="0.9898221933507768"/>
+                                <vt5 x= "0.0 " y= "0.0" z= "0.0" w="1.0"/>
+                                <vt12 x= "-0.04424917050127527 " y= "-0.03584952439569999" z= "0.018392353687905757" w="0.9982076656870404"/>
+                                <vl5 x= "0.0 " y= "0.0" z= "0.0" w="1.0"/>
+                        </Rotations>
+                </KeyPoint>
+        </torso>
+		
+	<!-- end Jieyeon Torso Gestures -->
+		
+	<!-- Fabien Torso Gestures -->
+	
+	<torso id="BodyLean" lexeme="BodyLean" repetition="2" amount="0.5">
+                <KeyPoint type="strokeStart">
+                        <Rotations>
+                                <vt2 x="-0.040480717" y="0.0" z="0.0" w="0.9944926"/>
+                                <vt5 x="0.053954312" y="0.0" z="0.0" w="0.990216"/>
+                                <vt12 x="0.0419712204" y="0.0" z="0.0" w="0.99280864"/>
+                                <vl5 x="0.042467473" y="0.0" z="0.0" w="0.9921977"/>
+                        </Rotations>
+                </KeyPoint>
+        </torso>
+	
+    <torso id="shakeHead" lexeme="shakeHead" repetition="2" amount="0.5">
+                <KeyPoint type ="strokeStart">
+                        <Rotations>
+                                <vt2 x= "0.0 " y= "0.0" z= "0.0" w="1.0"/>
+                                <vt5 x= "0.0 " y= "-0.0649542388347826" z= "0.0" w="0.9978882436713011"/>
+                                <vt12 x= "0.0 " y= "0.0" z= "0.0" w="1.0"/>
+                                <vl5 x= "0.0 " y= "0.0" z= "-0.02999550020249566" w="0.9995500337489875"/>
+                        </Rotations>
+                </KeyPoint>
+                <KeyPoint type ="stroke">
+                        <Rotations>
+                                <vt2 x= "0.0 " y= "0.0" z= "0.0" w="1.0"/>
+                                <vt5 x= "0.0 " y= "0.09983341664682815" z= "0.0" w="0.9950041652780258"/>
+                                <vt12 x= "0.0 " y= "0.0" z= "0.0" w="1.0"/>
+                                <vl5 x= "0.0 " y= "0.0" z= "-0.02999550020249566" w="0.9995500337489875"/>
+                        </Rotations>
+                </KeyPoint>
+                <KeyPoint type ="stroke">
+                        <Rotations>
+                                <vt2 x= "0.0 " y= "0.0" z= "0.0" w="1.0"/>
+                                <vt5 x= "0.0 " y= "-0.0649542388347826" z= "0.0" w="0.9978882436713011"/>
+                                <vt12 x= "0.0 " y= "0.0" z= "0.0" w="1.0"/>
+                                <vl5 x= "0.0 " y= "0.0" z= "-0.02999550020249566" w="0.9995500337489875"/>
+                        </Rotations>
+                </KeyPoint>
+                <KeyPoint type ="strokeEnd">
+                        <Rotations>
+                                <vt2 x= "0.0 " y= "0.0" z= "0.0" w="1.0"/>
+                                <vt5 x= "0.0 " y= "0.09983341664682815" z= "0.0" w="0.9950041652780258"/>
+                                <vt12 x= "0.0 " y= "0.0" z= "0.0" w="1.0"/>
+                                <vt15 x= "0.0 " y= "0.0" z= "0.0" w="1.0"/>
+                        </Rotations>
+                </KeyPoint>
+        </torso>
+
+	<torso id="smallSlideRightHead" lexeme="smallSlideRightHead" repetition="2" amount="0.5">
+                <KeyPoint type ="strokeStart">
+                        <Rotations>
+                                <vt2 x= "0.0 " y= "0.0" z= "0.0" w="1.0"/>
+                                <vt5 x= "0.04920120673543222 " y= "-0.04022832408573474" z= "0.10164491415660988" w="0.9927886152767497"/>
+                                <vt12 x= "0.0 " y= "-0.024997395914712332" z= "0.0" w="0.9996875162757026"/>
+                                <vl5 x= "0.0 " y= "0.0" z= "0.0" w="1.0"/>
+                        </Rotations>
+                </KeyPoint>
+        </torso>
+		
+	<torso id="smallInclinationTorsoLeft" lexeme="smallInclinationTorsoLeft" repetition="2" amount="0.5">
+                <KeyPoint type ="strokeStart">
+                        <Rotations>
+                                <vt2 x= "-0.015221020701376275 " y= "-0.01477110507061789" z= "-0.015221020701376275" w="0.999659169673649"/>
+                                <vt5 x= "-0.005024853647425816 " y= "-0.0049748546890845844" z= "-0.005024853647425816" w="0.9999623755484336"/>
+                                <vt12 x= "0.03998933418663416 " y= "0.0" z= "0.0" w="0.9992001066609779"/>
+                                <vl5 x= "0.014996437718821743 " y= "-2.999687512765346E-4" z= "-0.019996416885514456" w="0.9996875312747652"/>
+                        </Rotations>
+                </KeyPoint>
+        </torso>
+	
+	<torso id="rightNod" lexeme="rightNod" repetition="2" amount="0.5">
+                <KeyPoint type ="strokeStart">
+                        <Rotations>
+                                <vt2 x= "-0.013260677646270395 " y= "-0.016553532691261502" z= "0.10952997922240543" w="0.9937571728723977"/>
+                                <vt5 x= "-0.009903023468887353 " y= "0.10944223450658296" z= "0.04526070487830193" w="0.9929127836956779"/>
+                                <vt12 x= "-0.01999866669333308 " y= "0.0" z= "0.0" w="0.9998000066665778"/>
+                                <vl5 x= "0.0 " y= "0.0" z= "0.02999550020249566" w="0.9995500337489875"/>
+                        </Rotations>
+                </KeyPoint>
+        </torso>
+	
+	<torso id="strongLookLeft" lexeme="strongLookLeft" repetition="2" amount="0.5">
+                <KeyPoint type ="strokeStart">
+                        <Rotations>
+                                <vt2 x= "0.025814463199331335 " y= "0.0832791173103816" z= "-0.0713700757413671" w="0.9936319813685577"/>
+                                <vt5 x= "-0.06743950963200686 " y= "0.11868162061082604" z= "-0.05081801086395464" w="0.9893351885188425"/>
+                                <vt12 x= "0.0 " y= "0.0" z= "0.0" w="1.0"/>
+                                <vl5 x= "0.034957430317503015 " y= "0.044957263651669674" z= "-0.0015741470570229464" w="0.9983758533596424"/>
+                        </Rotations>
+                </KeyPoint>
+        </torso>
+	
+	<torso id="subtleBodyLean" lexeme="subtleBodyLean" repetition="2" amount="0.5">
+                <KeyPoint type ="strokeStart">
+                        <Rotations>
+                                <vt2 x= "-0.005024853647425816 " y= "-0.0049748546890845844" z= "-0.005024853647425816" w="0.9999623755484336"/>
+                                <vt5 x= "-0.009949211896845958 " y= "0.005099474602197796" z= "-0.009949211896845958" w="0.9998880045905366"/>
+                                <vt12 x= "0.03998933418663416 " y= "0.0" z= "0.0" w="0.9992001066609779"/>
+                                <vl5 x= "0.0 " y= "0.0" z= "0.0" w="1.0"/>
+                        </Rotations>
+                </KeyPoint>
+        </torso>
+	
+	<!-- end Fabien Torso Gestures -->
+	
+	<!-- Mireille Motion -1 Torso Gestures -->
+	
+	<torso id="HeadLean" lexeme="HeadLean" repetition="2" amount="0.5">
+                <KeyPoint type ="">
+                        <Rotations>
+                                <vt2 x= "0.034957430317503015 " y= "0.044957263651669674" z= "-0.0015741470570229464" w="0.9983758533596424"/>
+                                <vt5 x= "0.0 " y= "0.0" z= "0.0" w="1.0"/>
+                                <vt12 x= "0.0 " y= "0.0" z= "0.0" w="1.0"/>
+                                <vl5 x= "0.0 " y= "0.0" z= "0.0" w="1.0"/>
+                        </Rotations>
+                </KeyPoint>
+        </torso>
+	
+	        <torso id="ShouldersUP" lexeme="ShouldersUP" repetition="2" amount="0.5">
+                <KeyPoint type ="strokeStart">
+                        <Rotations>
+                                <vt2 x= "0.034957430317503015 " y= "0.044957263651669674" z= "-0.0015741470570229464" w="0.9983758533596424"/>
+                                <vt5 x= "0.0 " y= "0.0" z= "0.0" w="1.0"/>
+                                <vt12 x= "-0.04997916927067833 " y= "0.0" z= "0.0" w="0.9987502603949663"/>
+                                <vl5 x= "0.0 " y= "0.0" z= "0.0" w="1.0"/>
+                        </Rotations>
+                </KeyPoint>
+        </torso>
+	
+	
+	<torso id="ShouldersUP" lexeme="ShouldersUP" repetition="2" amount="0.5">
+                <KeyPoint type ="strokeStart">
+                        <Rotations>
+                                <vt2 x= "0.034957430317503015 " y= "0.044957263651669674" z= "-0.0015741470570229464" w="0.9983758533596424"/>
+                                <vt5 x= "0.0 " y= "0.0" z= "0.0" w="1.0"/>
+                                <vt12 x= "-0.04997916927067833 " y= "0.0" z= "0.0" w="0.9987502603949663"/>
+                                <vl5 x= "0.0 " y= "0.0" z= "0.0" w="1.0"/>
+                        </Rotations>
+                </KeyPoint>
+        </torso>
+		
+	
+	<torso id="HeadLean" lexeme="HeadLean" repetition="2" amount="0.5">
+                <KeyPoint type ="strokeStart">
+                        <Rotations>
+                                <vt2 x= "0.034957430317503015 " y= "0.044957263651669674" z= "-0.0015741470570229464" w="0.9983758533596424"/>
+                                <vt5 x= "0.0 " y= "0.0" z= "0.0" w="1.0"/>
+                                <vt12 x= "0.0 " y= "0.0" z= "0.0" w="1.0"/>
+                                <vl5 x= "0.0 " y= "0.0" z= "0.0" w="1.0"/>
+                        </Rotations>
+                </KeyPoint>
+        </torso>
+	
+	
+	 <torso id="HeadLeanLeft" lexeme="HeadLeanLeft" repetition="2" amount="0.5">
+                <KeyPoint type ="strokeStart">
+                        <Rotations>
+                                <vt2 x= "0.12428643210005391 " y= "0.060296621648353456" z= "-0.08255815184132154" w="0.9869657297891246"/>
+                                <vt5 x= "0.0 " y= "0.0" z= "0.0" w="1.0"/>
+                                <vt12 x= "-0.04997916927067833 " y= "0.0" z= "0.0" w="0.9987502603949663"/>
+                                <vl5 x= "0.0 " y= "0.0" z= "0.0" w="1.0"/>
+                        </Rotations>
+                </KeyPoint>
+        </torso>      
+		
+	<torso id="HeadLeanRight" lexeme="HeadLeanRight" repetition="2" amount="0.5">
+                <KeyPoint type ="strokeStart">
+                        <Rotations>
+                                <vt2 x= "0.0576595611853484 " y= "0.025848164042180644" z= "0.09844063113742405" w="0.9931347791517661"/>
+                                <vt5 x= "0.0 " y= "0.0" z= "0.0" w="1.0"/>
+                                <vt12 x= "-0.004999979166692708 " y= "0.0" z= "0.0" w="0.9999875000260416"/>
+                                <vl5 x= "0.0 " y= "0.0" z= "0.0" w="1.0"/>
+                        </Rotations>
+                </KeyPoint>
+        </torso>
+	
+	  <torso id="HeadLeanLeft" lexeme="HeadLeanLeft" repetition="2" amount="0.5">
+                <KeyPoint type ="strokeStart">
+                        <Rotations>
+                                <vt2 x= "0.12428643210005391 " y= "0.060296621648353456" z= "-0.08255815184132154" w="0.9869657297891246"/>
+                                <vt5 x= "0.0 " y= "0.0" z= "0.0" w="1.0"/>
+                                <vt12 x= "-0.04997916927067833 " y= "0.0" z= "0.0" w="0.9987502603949663"/>
+                                <vl5 x= "0.0 " y= "0.0" z= "0.0" w="1.0"/>
+                        </Rotations>
+                </KeyPoint>
+        </torso>
+	
+	 <torso id="HeadPointLeft" lexeme="HeadPointLeft" repetition="2" amount="0.5">        
+                <KeyPoint type ="strokeStart">
+                        <Rotations>
+                                <vt2 x= "0.13213017995824253 " y= "0.11077380463327292" z= "-3.0118208024267073E-7" w="0.9850232381782581"/>
+                                <vt5 x= "0.05852943479132002 " y= "0.03260746972976012" z= "0.04308683089489557" w="0.996822242520835"/>
+                                <vt12 x= "-0.004999979166692708 " y= "0.0" z= "0.0" w="0.9999875000260416"/>
+                                <vl5 x= "0.0 " y= "0.0" z= "0.0" w="1.0"/>
+                        </Rotations>
+                </KeyPoint>
+        </torso>
+	
+	<!-- end Mireille Torso Gestures Motion-1 -->
+	<!-- Torso Gestures Motion-8 -->
+	
+	<torso id="LeftSide" lexeme="LeftSide" repetition="1" amount="0.5">
+                
+                <KeyPoint type="strokeStart">
+                        <Rotations>
+                                <vt2 x= "-0.03225271409754671 " y= "-0.07605901343717056" z= "0.03225271409754671" w="0.9960595119477793"/>
+                                <vt5 x= "0.07563102243652545 " y= "-0.035821715131949095" z= "-0.13707523515050063" w="0.9870193174799804"/>
+                                <vt12 x= "-0.06828220207068988 " y= "-0.05052767064416911" z= "-0.06828220207068988" w="0.9940432768546998"/>
+                                <vl5 x= "0.0 " y= "0.0" z= "0.0" w="1.0"/>
+                        </Rotations>
+                </KeyPoint>
+        </torso>
+		
+		<torso id="You" lexeme="You" repetition="1" amount="0.5">
+                <KeyPoint type="strokeStart">
+                        <Rotations>
+                                <vt2 x= "0.1246747333852277 " y= "0.0" z= "0.0" w="0.9921976672293291"/>
+                                <vt5 x= "0.0 " y= "0.0" z= "0.0" w="1.0"/>
+                                <vt12 x= "-0.02448482851108012 " y= "0.020610914963147934" z= "-0.024484828511080123" w="0.999187758396763"/>
+                                <vl5 x= "0.0 " y= "0.0" z= "0.0" w="1.0"/>
+                        </Rotations>
+                </KeyPoint>
+        </torso>
+		<!-- end Torso Gestures Motion-8 -->
+		<!-- Torso Mireille/Sooraj Motion-6 -->
+		
+		        <torso id="ReceiveRt01Torso" lexeme="ReceiveRt01Torso" repetition="2" amount="0.5">
+                <KeyPoint type ="strokeStart">
+                        <Rotations>
+                                <vt2 x= "0.14898993977684868 " y= "-0.07097768765184775" z= "0.13539933668063361" w="0.9769499400313878"/>
+                                <vt5 x= "0.0 " y= "0.0" z= "0.0" w="1.0"/>
+                                <vt12 x= "0.0 " y= "0.0" z= "0.0" w="1.0"/>
+                                <vl5 x= "0.0 " y= "0.0" z= "0.0" w="1.0"/>
+                        </Rotations>
+                </KeyPoint>
+        </torso>
+		
+		        <torso id="SafeLf01Torso" lexeme="SafeLf01Torso" repetition="2" amount="0.5">
+                <KeyPoint type ="strokeStart">
+                        <Rotations>
+                                <vt2 x= "0.10870422952601365 " y= "0.13869972972850933" z= "-0.01531880601917137" w="0.9842312277298162"/>
+                                <vt5 x= "0.0 " y= "0.0" z= "0.0" w="1.0"/>
+                                <vt12 x= "0.0 " y= "0.0" z= "0.0" w="1.0"/>
+                                <vl5 x= "0.01499943750632809 " y= "0.0" z= "0.0" w="0.9998875021093592"/>
+                        </Rotations>
+                </KeyPoint>
+        </torso>
+		
+		        <torso id="ScratchChest01" lexeme="ScratchChest01" repetition="2" amount="0.5">
+                <KeyPoint type ="strokeStart">
+                        <Rotations>
+                                <vt2 x= "0.15286964381498544 " y= "0.13787020630865737" z= "-0.02154267989417264" w="0.9783448222151866"/>
+                                <vt5 x= "0.059964006479444595 " y= "0.0" z= "0.0" w="0.9982005399352042"/>
+                                <vt12 x= "0.0 " y= "0.0" z= "0.0" w="1.0"/>
+                                <vl5 x= "0.0 " y= "0.0" z= "0.0" w="1.0"/>
+                        </Rotations>
+                </KeyPoint>
+        </torso>
+
+	        <torso id="ScratchHead01" lexeme="ScratchHead01" repetition="2" amount="0.5">
+                <KeyPoint type ="strokeStart">
+                        <Rotations>
+                                <vt2 x= "0.07383295379841477 " y= "-0.24634237776779794" z= "0.023368597556108255" w="0.9660838661821082"/>
+                                <vt5 x= "0.0799146939691727 " y= "0.0" z= "0.0" w="0.9968017063026194"/>
+                                <vt12 x= "0.0 " y= "0.0" z= "0.0" w="1.0"/>
+                                <vl5 x= "0.0 " y= "0.0" z= "0.0" w="1.0"/>
+                        </Rotations>
+                </KeyPoint>
+        </torso>
+		
+		        <torso id="ScratchTempleLf01" lexeme="ScratchTempleLf01" repetition="2" amount="0.5">
+                <KeyPoint type ="strokeStart">
+                        <Rotations>
+                                <vt2 x= "0.1541605256947915 " y= "-0.03040707957590996" z= "-3.071638045473359E-4" w="0.9875777678135363"/>
+                                <vt5 x= "0.0 " y= "0.0" z= "0.0" w="1.0"/>
+                                <vt12 x= "0.0 " y= "0.0" z= "0.0" w="1.0"/>
+                                <vl5 x= "0.0 " y= "0.0" z= "0.0" w="1.0"/>
+                        </Rotations>
+                </KeyPoint>
+        </torso>
+
+	<!--************************************************************************************************-->
+	<!-- combined torso postures -->
+
+	<!--VerticalSagittal-->
+	<torsoDirectionShift id="RightVerticalForward">
+		<VerticalTorsion direction="Rightward" amount="0.5" min="0.0" max="1.0"></VerticalTorsion>
+		<SagittalTilt direction="Forward" amount="0.5" min="0.0" max="1.0"></SagittalTilt>
+	</torsoDirectionShift>
+
+	<torsoDirectionShift id="LeftVerticalForward">
+		<VerticalTorsion direction="Leftward" amount="0.5" min="0.0" max="1.0"></VerticalTorsion>
+		<SagittalTilt direction="Forward" amount="0.5" min="0.0" max="1.0"></SagittalTilt>
+	</torsoDirectionShift>
+
+	<torsoDirectionShift id="RightVerticalBackward">
+		<VerticalTorsion direction="Rightward" amount="0.5" min="0.0" max="1.0"></VerticalTorsion>
+		<SagittalTilt direction="Backward" amount="0.5" min="0.0" max="1.0"></SagittalTilt>
+	</torsoDirectionShift>
+
+	<torsoDirectionShift id="LeftVerticalBackward">
+		<VerticalTorsion direction="Leftward" amount="0.5" min="0.0" max="1.0"></VerticalTorsion>
+		<SagittalTilt direction="Backward" amount="0.5" min="0.0" max="1.0"></SagittalTilt>
+	</torsoDirectionShift>
+
+	<!--VerticalLateral-->
+	<torsoDirectionShift id="LeftVerticalLeftLateral">
+		<VerticalTorsion direction="Leftward" amount="0.5" min="0.0" max="1.0"></VerticalTorsion>
+		<LateralRoll direction="Leftward" amount="0.5" min="0.0" max="1.0"></LateralRoll>
+	</torsoDirectionShift>
+
+	<torsoDirectionShift id="LeftVerticalRightLateral">
+		<VerticalTorsion direction="Leftward" amount="0.5" min="0.0" max="1.0"></VerticalTorsion>
+		<LateralRoll direction="Rightward" amount="0.5" min="0.0" max="1.0"></LateralRoll>
+	</torsoDirectionShift>
+
+	<torsoDirectionShift id="RightVerticalLeftLateral">
+		<VerticalTorsion direction="Rightward" amount="0.5" min="0.0" max="1.0"></VerticalTorsion>
+		<LateralRoll direction="Leftward" amount="0.5" min="0.0" max="1.0"></LateralRoll>
+	</torsoDirectionShift>
+
+	<torsoDirectionShift id="RightVerticalRightLateral">
+		<VerticalTorsion direction="Rightward" amount="0.5" min="0.0" max="1.0"></VerticalTorsion>
+		<LateralRoll direction="Rightward" amount="0.5" min="0.0" max="1.0"></LateralRoll>
+	</torsoDirectionShift>
+
+	<!--VerticalCollapse-->
+	<torsoDirectionShift id="RightVerticalCollapse">
+		<VerticalTorsion direction="Rightward" amount="0.5" min="0.0" max="1.0"></VerticalTorsion>
+		<Collapse direction="Forward" amount="0.5" min="0.0" max="1.0"></Collapse>
+	</torsoDirectionShift>
+
+	<torsoDirectionShift id="LeftVerticalCollapse">
+		<VerticalTorsion direction="Leftward" amount="0.5" min="0.0" max="1.0"></VerticalTorsion>
+		<Collapse direction="Forward" amount="0.5" min="0.0" max="1.0"></Collapse>
+	</torsoDirectionShift>
+
+	<!--SagittalLateral-->
+	<torsoDirectionShift id="ForwardSagittalLeftLateral">
+		<SagittalTilt direction="Forward" amount="0.5" min="0.0" max="1.0"></SagittalTilt>
+		<LateralRoll direction="Leftward" amount="0.5" min="0.0" max="1.0"></LateralRoll>
+	</torsoDirectionShift>
+
+	<torsoDirectionShift id="ForwardSagittalRightLateral">
+		<SagittalTilt direction="Forward" amount="0.5" min="0.0" max="1.0"></SagittalTilt>
+		<LateralRoll direction="Rightward" amount="0.5" min="0.0" max="1.0"></LateralRoll>
+	</torsoDirectionShift>
+
+	<torsoDirectionShift id="BackwardSagittalLeftLateral">
+		<SagittalTilt direction="Backward" amount="0.5" min="0.0" max="1.0"></SagittalTilt>
+		<LateralRoll direction="Leftward" amount="0.5" min="0.0" max="1.0"></LateralRoll>
+	</torsoDirectionShift>
+
+	<torsoDirectionShift id="BackwardSagittalRightLateral">
+		<SagittalTilt direction="Backward" amount="0.5" min="0.0" max="1.0"></SagittalTilt>
+		<LateralRoll direction="Rightward" amount="0.5" min="0.0" max="1.0"></LateralRoll>
+	</torsoDirectionShift>
+
+	<!--SagittalCollapse-->
+	<torsoDirectionShift id="ForwardSagittalDownward">
+		<SagittalTilt direction="Forward" amount="0.5" min="0.0" max="1.0"></SagittalTilt>
+		<Collapse direction="Forward" amount="0.5" min="0.0" max="1.0"></Collapse>
+	</torsoDirectionShift>
+
+	<torsoDirectionShift id="BackwardSagittalDownward">
+		<SagittalTilt direction="Backward" amount="0.5" min="0.0" max="1.0"></SagittalTilt>
+		<Collapse direction="Forward" amount="0.5" min="0.0" max="1.0"></Collapse>
+	</torsoDirectionShift>
+
+	<!--LateralCollapse-->
+	<torsoDirectionShift id="LeftLateralDownward">
+		<LateralRoll direction="Leftward" amount="0.5" min="0.0" max="1.0"></LateralRoll>
+		<Collapse direction="Forward" amount="0.5" min="0.0" max="1.0"></Collapse>
+	</torsoDirectionShift>
+
+	<torsoDirectionShift id="RightLateralDownward">
+		<LateralRoll direction="Rightward" amount="0.5" min="0.0" max="1.0"></LateralRoll>
+		<Collapse direction="Forward" amount="0.5" min="0.0" max="1.0"></Collapse>
+	</torsoDirectionShift>
+
+	<!-- multiple torso postures -->
+	<torsoDirectionShift id="ForwardRightLateralDownward">
+		<SagittalTilt direction="Forward" amount="0.5" min="0.0" max="1.0"></SagittalTilt>
+		<LateralRoll direction="Rightward" amount="0.5" min="0.0" max="1.0"></LateralRoll>
+		<Collapse direction="Forward" amount="0.5" min="0.0" max="1.0"></Collapse>
+	</torsoDirectionShift>
+
+	<torsoDirectionShift id="LeftVRightLForward">
+		<VerticalTorsion direction="Leftward" amount="0.5" min="0.0" max="1.0"></VerticalTorsion>
+		<SagittalTilt direction="Forward" amount="0.5" min="0.0" max="1.0"></SagittalTilt>
+		<LateralRoll direction="Rightward" amount="0.5" min="0.0" max="1.0"></LateralRoll>
+	</torsoDirectionShift>
+
+	<torsoDirectionShift id="LeftVRightLDownwardForward">
+		<VerticalTorsion direction="Leftward" amount="0.5" min="0.0" max="1.0"></VerticalTorsion>
+		<SagittalTilt direction="Forward" amount="0.5" min="0.0" max="1.0"></SagittalTilt>
+		<LateralRoll direction="Rightward" amount="0.5" min="0.0" max="1.0"></LateralRoll>
+		<Collapse direction="Forward" amount="0.5" min="0.0" max="1.0"></Collapse>
+	</torsoDirectionShift>
+
+	<!-- to be continued -->
+
+</TorsoGestures>

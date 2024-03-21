@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<fml-apml>
+	<bml>
+		<speech id="s1" start="0.0" language="english" voice="marytts" type="SAPI4" text="">
+			<description level="1" type="gretabml">
+				<reference>tmp/from-fml-apml.pho</reference>
+			</description>
+    
+            
+ 
+            <tm id="tm0"/>
+                Thank you for waiting. Here is your result.
+            <tm id="tm1"/>
+                I think eye-contact was good. If you can handle eye-contact, you can maintain interlocutor's attention while you are talking. So that should be good communication!
+            <tm id="tm2"/>
+                It will be better communication when you pay a little bit more attention to facial-expression.You can convey how you are feeling to the interlocutor's talk, which makes the conversation confortable for you and the interlocutor.If you think the improving facial-expression seems diffcult, I advise you to mimic the facial expressions of the other person while talking.
+            <tm id="tm3"/>
+                This is the end of SST session. Thank you for joining. To do another session, please restart the system.
+            
+ 
+            <boundary type="LL" id="b1" start="s1:tm1" end="s1:tm1+0.75"/>
+            <boundary type="LL" id="b1" start="s1:tm2" end="s1:tm2+0.75"/>
+            <boundary type="LL" id="b1" start="s1:tm3" end="s1:tm3+3.00"/>
+        
+		</speech>
+	</bml>
+</fml-apml>
+        

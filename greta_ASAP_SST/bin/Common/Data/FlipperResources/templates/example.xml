@@ -1,0 +1,415 @@
+<behaviourtemplates>
+    <is name="example">
+        {
+            "init" : {
+				"Feedback" : ""
+			},
+            "input" : {
+                "speech" : "",
+                "cbtq" : "",
+				"automaticThought" : "false",
+				"automaticThoughtStarted" : "false",
+				"automaticThoughtFinished" : "false",
+				"ansFirstTime" : "true"
+            },
+            "core" : {
+                "uIntent" : "",
+                "aIntent" : ""
+            },
+			"memory" : {
+			    "intent" : "",
+				"doublon" : "",
+				"choice" : ""
+			},
+			"user" : {
+			    "Uname" : ""
+			},
+            "output" : {
+                "speech" : ""
+            },
+			"agent": {
+			    "fmlParameterSetting": "",
+				"log": "",
+				"fileName": "",
+				"fml": {
+					"template": "",
+					"parameters": {}
+				}
+			},
+			"feedback": {
+                "agentSpeaking" : "false"
+			}
+        }
+    </is>
+
+    <javascript>
+        <![CDATA[
+		var cbtq_idx = 0;
+		var cbtq_inc = false;
+		var need_check_at = false;
+		var ask4at_idx = 0;
+
+		var ask4AT = new Array();
+		ask4AT[0] = "Ask4AT1";
+		ask4AT[1] = "Ask4AT2";
+		ask4AT[2] = "Ask4AT3";
+		ask4AT[3] = "Ask4AT4";
+		ask4AT[4] = "Ask4AT5";
+		ask4AT[5] = "Ask4AT6";
+		
+        function helpPrint(text){
+            print(text);
+            return true;
+        }
+		
+		function setText(text){
+			return text;
+		}
+			
+		function addIntent(memory, intent){
+			return memory + ";" + intent ; 
+        }
+		
+		function checkDoublon(text){
+			var list = text.split(";");
+			var last = list[list.length-1];
+			list.splice((list.length)-1,1);
+
+			for(word in list){
+				if(list[word] === last){
+					return "true";
+				 }
+			}
+			return "false";
+		}
+		
+		function arrayRandom(a){
+			return a[Math.floor(Math.random() * a.length)];
+        }
+		
+	    function containsKeyword(text, keywords) {
+			var word;
+			list = text.split(" ");
+			keywords = keywords.split(",");
+
+			for (word in list) {
+				var key;
+				for (key in keywords) {
+					if (keywords[key] === list[word]) {
+						return true;
+					}
+				} 
+			}
+            return false;
+        }
+		
+		
+		function reset(text) {
+			var reset = "redémarrer";
+				if(containsKeyword(text,reset) == true){	
+					cbtq_idx = 0;
+					ask4at_idx = 0;
+					return "true";
+				}
+			return "false";
+		}
+				
+		
+        function getUserIntent(text) {
+			helpPrint("Userintent: " + text);
+		
+			var keywords_greeting = "bonjour,salut,coucou,bonsoir,hello, hi";
+			var keywords_repeat = "répéter,répétez,répètes,redire,redites,redis,reparler,reparlez,reparles,comment,pardon,repeat";
+			var keywords_CBTQs = new Array();
+			keywords_CBTQs[0] = "camille,aider,difficile";
+			keywords_CBTQs[1] = "humeur,cela";
+		
+			if (containsKeyword(text, keywords_greeting) == true) {
+				return "greeting";
+			}
+			else if (containsKeyword(text, keywords_repeat) == true) {
+				return "repeat";
+			}
+			else if(text !== ""){
+				return "response"
+			}
+			return "unknown";
+		}
+
+        function setAgentIntent(intent){
+            return intent; // autant le simplifier ainsi car dans ce cas on simplifie intent user == intent agent
+        }
+		
+		function setMemoryChoice(array, text){
+			if(array !== ""){
+				arr = array.split(",");
+				arr.push(text);
+				return arr;
+			}
+			else {
+				return text;
+			}
+		}
+        
+        function setAgentSpeech(intent,array,assign_fml,isAT){		
+			array = array.split(",");
+			var phase = array.length;
+			helpPrint("intent " + intent);
+			if(intent == "repeat"){
+				return "CBTQ" + cbtq_idx.toString();
+			}else if(intent == "greeting" || intent == "response"){
+				helpPrint("CBTQ" + cbtq_idx.toString());
+				if (assign_fml == "false" && cbtq_inc == false) {
+					if(cbtq_idx == 4){
+						if(isAT == "true"){
+        					cbtq_idx = cbtq_idx + 1;
+        					cbtq_inc = true;
+							need_check_at = false;
+						} else {
+							need_check_at = true;
+						}
+					}
+					else {
+						cbtq_idx = cbtq_idx + 1;
+						cbtq_inc = true;
+					}
+				}
+				if (assign_fml == "true"){
+					cbtq_inc = false;
+				}
+				if (need_check_at == false) {
+				helpPrint("CBTQ" + cbtq_idx.toString());
+				return "CBTQ" + cbtq_idx.toString();
+			}
+				else {
+					helpPrint("Ask for new phrase that is an automatic thought");
+					helpPrint("ASK4AT" + ask4at_idx.toString());
+					if(ask4at_idx >= 6){
+						need_check_at = false;
+						cbtq_idx = cbtq_idx + 1;
+						cbtq_inc = true;
+					} else if (assign_fml == "false"){
+						ask4at_idx = ask4at_idx + 1;
+					}
+					return ask4AT[ask4at_idx-1]
+				}
+				helpPrint("cbtq_idx" + cbtq_idx.toString() + ", checking AT " + need_check_at);
+			}
+		}
+
+		function assignCBTQ(){
+			return cbtq_idx.toString()
+		}
+		
+    ]]>
+    </javascript>
+
+
+    <!-- Initialize the modules -->
+    <template id="initializeModules" name="initializeModules">
+        <preconditions>
+            <condition>is.example.init === "{}"</condition>
+            <condition>helpPrint("initializing")</condition>
+        </preconditions>
+        <initeffects>
+            <method name="init" is="is.example.init.ASR">
+                <object persistent="asr" class="greta.FlipperDemo.input.ASRInputManager">
+                    <constructors/>
+                </object>
+            </method> 
+			
+			<method name="init" is="is.example.init.Feedback">
+				<object persistent="feedback" class="greta.FlipperDemo.input.FeedbackManager">
+					<constructors>
+						<value class="String" constant="semaine.callback.output.feedback"/>
+					</constructors>
+				</object>
+			</method>
+
+			<method name="init" is="is.example.init.agent">
+                <object persistent="fmlGenerator" class="greta.FlipperDemo.dm.managers.FMLGenerator">
+                    <constructors/>
+                </object>
+            </method>		
+
+        </initeffects>
+    </template>
+
+	 	
+	<!-- Check if Agent is speaking -->
+	<template id="getUserFeedback">
+		<preconditions>
+			<method name="hasMessage">
+				<object persistent="feedback" class="greta.FlipperDemo.input.FeedbackManager"/>
+			</method>
+		</preconditions>
+		<effects>
+			<method name="getMessage" is="is.example.feedback.agentSpeaking">
+				<object persistent="feedback" class="greta.FlipperDemo.input.FeedbackManager"/>
+			</method>
+		</effects>
+	</template>
+		
+	<!-- Check for speech -->
+    <template id="getUserSpeech">
+        <preconditions>
+			<condition>is.example.feedback.agentSpeaking === "true"</condition>
+            <method name="hasMessage">
+                <object persistent="asr" class="greta.FlipperDemo.input.ASRInputManager"/>
+            </method>
+        </preconditions>
+        <effects>
+            <method name="getMessage" is="is.example.input.cbtq">
+                <object persistent="asr" class="greta.FlipperDemo.input.ASRInputManager"/>
+            </method>
+			<assign is="is.example.input.speech">""</assign>
+        </effects>
+    </template>
+
+    <template id="getUserSpeech">
+        <preconditions>
+			<condition>is.example.feedback.agentSpeaking === "false"</condition>
+            <method name="hasMessage">
+                <object persistent="asr" class="greta.FlipperDemo.input.ASRInputManager"/>
+            </method>
+        </preconditions>
+        <effects>
+			<assign is="is.example.input.cbtq">assignCBTQ()</assign>
+            <method name="getMessage" is="is.example.input.speech">
+                <object persistent="asr" class="greta.FlipperDemo.input.ASRInputManager"/>
+            </method>
+        </effects>
+    </template>
+
+	<template id="getUserSpeech">
+        <preconditions>
+			<condition>is.example.feedback.agentSpeaking === "false"</condition>
+			<condition>is.example.input.ansFirstTime === "false"</condition>
+            <method name="hasMessage">
+                <object persistent="asr" class="greta.FlipperDemo.input.ASRInputManager"/>
+            </method>
+        </preconditions>
+        <effects>
+			<assign is="is.example.input.speech">""</assign>
+        </effects>
+    </template>
+	
+	<!-- Start ATcls python program -->
+    <template id="startAutomaticThoughtClsProgram">
+        <preconditions>
+			<condition>is.example.input.automaticThoughtStarted === "false"</condition>
+			<condition>is.example.input.automaticThoughtFinished === "false"</condition>
+        </preconditions>
+        <effects>
+			<assign is="is.example.input.automaticThoughtStarted">"true"</assign>
+			<method name="startATclsProgram">
+                <object persistent="asr" class="greta.FlipperDemo.input.ASRInputManager"/>
+            </method>
+        </effects>
+    </template>
+	
+	<!-- Check for automatic thought -->
+    <template id="checkAutomaticThought">
+        <preconditions>
+			<condition>is.example.input.cbtq === "4"</condition>
+			<condition>is.example.input.automaticThoughtStarted === "true"</condition>
+			<condition>is.example.input.automaticThoughtFinished === "false"</condition>
+        </preconditions>
+        <effects>
+			<method name="checkMessageIsAT"  is="is.example.input.automaticThought">
+                <object persistent="asr" class="greta.FlipperDemo.input.ASRInputManager"/>
+            </method>
+        </effects>
+    </template>
+	
+	<!-- End ATcls python program when automatic thought finished -->
+    <template id="endAutomaticThoughtClsProgram">
+        <preconditions>
+			<condition>is.example.input.cbtq === "5"</condition>
+			<condition>is.example.input.automaticThoughtStarted === "true"</condition>
+        </preconditions>
+        <effects>
+			<assign is="is.example.input.automaticThoughtFinished">"true"</assign>
+			<method name="endATclsProgram">
+                <object persistent="asr" class="greta.FlipperDemo.input.ASRInputManager"/>
+            </method>
+        </effects>
+    </template>
+
+	<!-- Reset -->
+    <template id="ReSet">
+        <preconditions>
+			<condition>is.example.input.speech !== ""</condition>
+            <condition>reset(is.example.input.speech) === "true"</condition>
+        </preconditions>
+        <effects>
+			<assign is="is.example.user.Uname">""</assign>
+			<assign is="is.example.memory.choice">""</assign>
+			<assign is="is.example.memory.intent">""</assign>
+			<assign is="is.example.memory.doublon">setText("false")</assign>
+			<assign is="is.example.input.speechFirstTime">"true"</assign>
+			<assign is="is.example.input.automaticThoughtStarted">"false"</assign>
+			<assign is="is.example.input.automaticThoughtFinished">"false"</assign>
+        </effects>
+    </template>
+	
+
+    <!-- Set user intent when speech -->
+    <template id="setUserIntent">
+        <preconditions>
+            <condition>is.example.input.speech !== ""</condition>
+        </preconditions>
+        <effects>
+            <assign is="is.example.core.uIntent">getUserIntent(is.example.input.speech)</assign>
+            <assign is="is.example.input.speech">""</assign>
+        </effects>
+    </template>
+	
+    <!-- Set agent intent based on user intent -->
+    <template id="setAgentIntent">
+        <preconditions>
+            <condition>is.example.core.uIntent !== ""</condition>
+        </preconditions>
+        <effects>
+            <assign is="is.example.core.aIntent">setAgentIntent(is.example.core.uIntent)</assign>
+			<assign is="is.example.memory.doublon">checkDoublon(is.example.memory.intent)</assign>
+            <assign is="is.example.core.uIntent">""</assign>
+			
+        </effects>
+    </template>
+	
+	
+    <!-- Set agent speech based on agent intent -->
+    <template id="setAgentSpeech">
+        <preconditions>
+            <condition>is.example.core.aIntent !== ""</condition>
+			<condition>is.example.memory.doublon === "false"</condition>
+			<condition>is.example.input.ansFirstTime === "true"</condition>
+        </preconditions>
+        <effects>
+			<assign is="is.example.input.ansFirstTime">"false"</assign>
+			<assign is="is.example.output.speech">setAgentSpeech(is.example.core.aIntent,is.example.memory.choice,"false",is.example.input.automaticThought)</assign>
+			<assign is="is.example.agent.fml.template">setAgentSpeech(is.example.core.aIntent,is.example.memory.choice,"true")</assign>
+            <assign is="is.example.core.aIntent">""</assign>
+			<assign is="is.example.input.ansFirstTime">"true"</assign>
+        </effects>
+    </template>
+
+    <!-- Say agent speech -->
+	 <template id="executeFMLTemplate" >
+        <preconditions>
+				<condition>is.example.agent.fml.template !== ""</condition>
+        </preconditions>
+        <effects>
+            <behaviour name="executeTemplate">
+                <object class="greta.FlipperDemo.dm.managers.FMLGenerator" persistent="fmlGenerator"></object>
+                <arguments>
+                    <value class="String" is="is.example.agent.fml" is_type="JSONString"/>
+                </arguments>
+            </behaviour>
+            <assign is="is.example.agent.fml.template">""</assign>
+			<assign is="is.example.output.speech">""</assign>
+        </effects>
+    </template>
+
+</behaviourtemplates>

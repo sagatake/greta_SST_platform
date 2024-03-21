@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<fml-apml>
+	<bml>
+		<speech id="s1" start="0.0" language="english" voice="marytts" type="SAPI4" text="">
+			<description level="1" type="gretabml">
+				<reference>tmp/from-fml-apml.pho</reference>
+			</description>
+    
+            
+ 
+            <tm id="tm0"/>
+                Thank you for waiting. Here is your result.
+            <tm id="tm1"/>
+                I think eye contact was good.
+
+	    <tm id="tm2"/>
+		If you can handle eye contact, you can express how you tries to answer the request.
+
+	    <tm id="tm3"/>
+		So that should be good communication!
+            <tm id="tm4"/>
+                It will be better communication when you pay a little bit more attention to voice variation.
+
+	    <tm id="tm5"/>
+		You can express how you are feeling, which makes the conversation confortable for you and the interlocutor.
+
+	    <tm id="tm6"/>
+		If you think the improving voice variation seems diffcult, I advise you to slightly lower the tone of voice
+                
+            <tm id="tm7"/>
+                This is the end of SST session. Thank you for joining. To do another session, please restart the system.
+            
+ 
+            <boundary type="LL" id="b1" start="s1:tm1" end="s1:tm1+0.75"/>
+            <boundary type="LL" id="b2" start="s1:tm2" end="s1:tm2+0.75"/>
+	    <boundary type="LL" id="b3" start="s1:tm3" end="s1:tm3+0.75"/>
+	    <boundary type="LL" id="b4" start="s1:tm4" end="s1:tm4+0.75"/>
+	    <boundary type="LL" id="b5" start="s1:tm5" end="s1:tm5+0.75"/>
+	    <boundary type="LL" id="b6" start="s1:tm6" end="s1:tm6+3.0"/>
+	    <boundary type="LL" id="b7" start="s1:tm7" end="s1:tm7+0.75"/>
+        
+		</speech>
+	</bml>
+</fml-apml>
+        
+
+

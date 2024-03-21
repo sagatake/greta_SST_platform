@@ -1,0 +1,7 @@
+import * from "autodesk.material"
+
+material agentAReal_Autodesk_Body : base {
+	set_texture_alias diffuseMap agentareal/color.jpg
+	set_texture_alias celShadingMap agentareal/color.jpg
+}
+

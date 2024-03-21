@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="shift_jis" ?>
+<fml-apml>
+<bml>
+<speech id="s1" language="ja-JP" start="0.0" text="" type="SAPI4" voice="cerevoice" xmlns="">
+計算を開始します。
+</speech>
+</bml>
+</fml-apml>

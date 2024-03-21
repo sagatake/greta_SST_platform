@@ -1,0 +1,57 @@
+name: py37_wsd
+channels:
+  - defaults
+dependencies:
+  - certifi=2022.12.7=py37haa95532_0
+  - pip=22.3.1=py37haa95532_0
+  - python=3.7.0=hea74fb7_0
+  - setuptools=65.6.3=py37haa95532_0
+  - vc=14.2=h21ff451_1
+  - vs2015_runtime=14.27.29016=h5e58377_2
+  - wheel=0.38.4=py37haa95532_0
+  - wincertstore=0.2=py37haa95532_2
+  - pip:
+    - chardet==3.0.4
+    - charset-normalizer==3.1.0
+    - click==8.1.3
+    - colorama==0.4.6
+    - filelock==3.12.2
+    - fsspec==2023.1.0
+    - googletrans==4.0.0rc1
+    - h11==0.9.0
+    - h2==3.2.0
+    - hpack==3.0.0
+    - hstspreload==2023.1.1
+    - httpcore==0.9.1
+    - httpx==0.13.3
+    - huggingface-hub==0.15.1
+    - hyperframe==5.2.0
+    - idna==2.10
+    - importlib-metadata==6.7.0
+    - joblib==1.2.0
+    - nltk==3.8.1
+    - numpy==1.21.6
+    - packaging==23.1
+    - pillow==9.5.0
+    - pyyaml==6.0
+    - regex==2023.6.3
+    - requests==2.31.0
+    - rfc3986==1.5.0
+    - safetensors==0.3.1
+    - scikit-learn==1.0.2
+    - scipy==1.7.3
+    - sentence-transformers==2.2.2
+    - sentencepiece==0.1.99
+    - sniffio==1.3.0
+    - threadpoolctl==3.1.0
+    - tokenizers==0.13.3
+    - tomli==2.0.1
+    - torch==1.13.1
+    - torchvision==0.14.1
+    - tqdm==4.65.0
+    - transformers==4.30.2
+    - typing-extensions==4.6.3
+    - urllib3==1.26.0
+    - wn==0.9.4
+    - zipp==3.15.0
+prefix: C:\Users\Stagiaire\anaconda3\envs\py37_wsd

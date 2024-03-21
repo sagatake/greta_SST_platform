@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<fml-apml>
+	<bml>
+		<speech id="s1" start="0.0" language="french" voice="marytts" type="SAPI4" text="">
+			<description level="1" type="gretabml">
+				<reference>tmp/from-fml-apml.pho</reference>
+			</description>
+				
+			<tm id="tm1"/>
+				Si c'est différent par rapport au début,
+			<tm id="tm2"/>
+				cela suggère que vous avez bien réfléchi à partir de mes questions.
+			<tm id="tm3"/>
+				Notre temps est écoulé pour aujourd'hui.
+			<tm id="tm4"/>
+				Je vous remercie pour votre travail acharné.
+			<tm id="tm5"/>
+				N'hésitez pas à revenir.
+			<tm id="tm6"/>
+
+			<boundary type="LL" id="" start="s1:tm3" end="s1:tm3+1"/>
+			<boundary type="LL" id="" start="s1:tm4" end="s1:tm4+1"/>
+			<boundary type="LL" id="" start="s1:tm5" end="s1:tm5+1"/>
+			
+			
+		</speech>
+	</bml>
+</fml-apml>
+
+

@@ -1,0 +1,13 @@
+Input:src_video/temp_user.avi
+Input full path:/home/TAPAS/src_video/temp_user.avi
+Camera parameters:218.75,218.75,160,90
+Output HOG:temp_user.hog
+Output video:temp_user.avi
+Output aligned directory:temp_user_aligned
+Output csv:temp_user.csv
+Gaze: 1
+AUs: 1
+Landmarks 2D: 1
+Landmarks 3D: 1
+Pose: 1
+Shape parameters: 1

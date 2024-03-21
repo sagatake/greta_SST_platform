@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<fml-apml>
+	<bml>
+		<speech id="s1" start="0.0" language="french" voice="marytts" type="SAPI4" text="">
+        
+			<description level="1" type="gretabml">
+				<reference>tmp/from-fml-apml.pho</reference>
+			</description>
+
+            <tm id="tm0"/>
+                Non, je t'&eacute;coute. 
+            <tm id="tm1"/>
+                Qu'est-ce qu'il se passe ? 
+
+            <boundary type="LL" id="b1" start="s1:tm1" end="s1:tm1+0.75"/>
+
+		</speech>
+	</bml>
+</fml-apml>

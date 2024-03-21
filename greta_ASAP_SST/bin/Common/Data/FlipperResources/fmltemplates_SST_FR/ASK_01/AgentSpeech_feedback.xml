@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<fml-apml>
+	<bml>
+		<speech id="s1" start="0.0" language="french" voice="marytts" type="SAPI4" text="">
+			<description level="1" type="gretabml">
+				<reference>tmp/from-fml-apml.pho</reference>
+			</description>
+ 
+            <tm id="tm0"/>
+                Merci d'avoir patient&eacute;, voil&agrave; tes r&eacute;sultats.
+            <tm id="tm1"/>
+                Je pense que l'aille contact &eacute;tait bien.
+
+	    <tm id="tm2"/>
+		Si vous arrivez &agrave; g&eacute;rer l'aille contact, vous pourrez dire &agrave; quel point tu veux qu'il le fasse.
+
+	    <tm id="tm3"/>
+		Ainsi, vous pourrez avoir une communication r&eacute;ussie!
+            <tm id="tm4"/>
+                La communication serait meilleure si vous accordiez un peu plus d'attention au changement de voix.
+
+	    <tm id="tm5"/>
+		Vous pourrez dire &agrave; quel point tu voulais leur demander &agrave; eux , ce qui rendrait la conversation plus confortable pour vous et l'interlocuteur.
+
+	    <tm id="tm6"/>
+		Si pour vous, l'am&eacute;lioration du changement de voix semble difficile, je vous conseille de changer la vitesse de ta voix ou de ton ton pour accentuer
+
+            <tm id="tm7"/>
+                C'est la fin de notre session d'entrainement. Merci encore d'avoir particip&eacute;.
+
+            <tm id="tm8"/>            
+ 
+            <boundary type="LL" id="b1" start="s1:tm1" end="s1:tm1+0.75"/>
+            <boundary type="LL" id="b2" start="s1:tm2" end="s1:tm2+0.75"/>
+	    <boundary type="LL" id="b3" start="s1:tm3" end="s1:tm3+0.75"/>
+	    <boundary type="LL" id="b4" start="s1:tm4" end="s1:tm4+0.75"/>
+	    <boundary type="LL" id="b5" start="s1:tm5" end="s1:tm5+0.75"/>
+	    <boundary type="LL" id="b6" start="s1:tm6" end="s1:tm6+0.75"/>
+	    <boundary type="LL" id="b7" start="s1:tm7" end="s1:tm7+3.0"/>
+	    <boundary type="LL" id="b8" start="s1:tm8" end="s1:tm8+0.75"/>
+        
+		</speech>
+	</bml>
+</fml-apml>
+
+
+
+
+
+

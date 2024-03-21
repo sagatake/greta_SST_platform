@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<fml-apml>
+  <bml>
+    <speech id="s1" language="english" text="" type="SAPI4" voice="marytts">
+      <description level="1" type="gretabml">
+        <reference>tmp/from-fml-apml.pho</reference>
+      </description>Now let's practice <tm id="tm1" value="1"/>
+      <pause duration_sym="long" id="p1" ref="2"/>how <tm id="tm2" value="1"/>to make a request <tm id="tm3" value="1"/>
+      <pause duration_sym="long" id="p2" ref="4"/>to your <boundary end="s1:tm4" id="b1" start="s1:tm3" type="LL"/>family<tm id="tm4" value="0"/>
+    </speech>
+  </bml>
+  <fml/>
+</fml-apml>

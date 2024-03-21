@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<fml-apml>
+
+    
+        <bml>
+            <speech id="s1" language="ja-JP" start="0.0" text="" type="SAPI4" voice="cerevoice">
+そういえば、この前は、会社のイベント、とても楽しかったですよねー。
+</speech>
+        </bml>
+<fml>
+    
+    <fml/>
+
+
+</fml>
+</fml-apml>

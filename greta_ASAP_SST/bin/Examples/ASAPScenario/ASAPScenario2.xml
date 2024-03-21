@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<fml-apml>
+	<bml>
+		<speech id="s1" start="0.0" language="french" voice="marytts" type="SAPI4" text="">
+			<description level="1" type="gretabml">
+				<reference>tmp/from-fml-apml.pho</reference>
+			</description>
+				
+			<tm id="tm1"/>
+				Sur une échelle de 0 pour déprimé à 100 pour heureux,
+			<tm id="tm2"/>
+				comment placeriez-vous votre humeur?
+			<tm id="tm3"/>
+				
+			
+			
+		</speech>
+	</bml>
+</fml-apml>
+
+

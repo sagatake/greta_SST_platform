@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<fml-apml>
+	<bml>
+		<speech id="s1" start="0.0" language="french" voice="marytts" type="SAPI4" text="">
+        
+			<description level="1" type="gretabml">
+				<reference>tmp/from-fml-apml.pho</reference>
+			</description>
+
+            <tm id="tm0"/>
+                Bonjour.
+            <tm id="tm1"/>
+                Profitons de l'entraînement aujourd’hui. 
+            <tm id="tm2"/>
+                Aujourd’hui nous allons nous entraîner à formuler une demande à un camarade ou un collègue.
+            <tm id="tm3"/>
+                Nous rencontrons souvent des situations où nous avons besoin de demander des services aux personnes qui nous entourent.
+            <tm id="tm4">
+                Si ton attitude semble ennuyeuse ou exigeante, alors l’autre personne ne sera généralement pas motivée à faire ce que tu lui as demandé. 
+            <tm id="tm5">
+                Demander des services avec politesse est moins stressant.
+            <tm id="tm6">
+                As-tu compris ? 
+
+            <boundary type="LL" id="b1" start="s1:tm1" end="s1:tm1+0.75"/>
+            <boundary type="LL" id="b2" start="s1:tm2" end="s1:tm2+0.75"/>
+            <boundary type="LL" id="b3" start="s1:tm3" end="s1:tm3+0.75"/>
+            <boundary type="LL" id="b4" start="s1:tm4" end="s1:tm4+0.75"/>
+            <boundary type="LL" id="b5" start="s1:tm5" end="s1:tm5+0.75"/>
+            <boundary type="LL" id="b5" start="s1:tm6" end="s1:tm6+1.0"/>
+
+		</speech>
+	</bml>
+</fml-apml>

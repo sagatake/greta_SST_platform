@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<fml-apml>
+	<bml>
+		<speech id="s1" start="0.0" language="french" voice="marytts" type="SAPI4" text="">
+        
+			<description level="1" type="gretabml">
+				<reference>tmp/from-fml-apml.pho</reference>
+			</description>
+
+            <tm id="tm0"/>
+                Bonjour, je suis Greta, je suis ici pour t’aider lors de ta session SST d’aujourd’hui. 
+            <tm id="tm1"/>
+                Puis-je avoir ton nom s’il te plait ?
+
+            <boundary type="LL" id="b1" start="s1:tm1" end="s1:tm1+0.75"/>
+
+		</speech>
+	</bml>
+</fml-apml>

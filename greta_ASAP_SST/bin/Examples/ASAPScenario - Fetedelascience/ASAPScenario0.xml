@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<fml-apml>
+	<bml>
+		<speech id="s1" start="0.0" language="french" voice="marytts" type="SAPI4" text="">
+			<description level="1" type="gretabml">
+				<reference>tmp/from-fml-apml.pho</reference>
+			</description>
+				
+			<tm id="tm1"/>
+				Bonjour,
+			<tm id="tm2"/>
+				Je m'appelle Camille et je suis membre d'équipe PI ROS.
+			<tm id="tm3"/>
+				Bienvenu à IS IR.
+			<tm id="tm4"/>
+				Je suis là pour parler avec vous.
+			<tm id="tm5"/>
+				Comment allez-vous?
+			<tm id="tm6"/>
+		</speech>
+	</bml>
+</fml-apml>
+
+

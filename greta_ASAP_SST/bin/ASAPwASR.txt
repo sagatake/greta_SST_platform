@@ -1,0 +1,10 @@
+Notes for ASAP with ASR/Flipper2 scenario player
+
+Speech recognizer: https://127.0.0.1:8087
+If error files to check:
+- 8087 in greta-gpl-grimaldi_ASAPnASR\auxiliary\SpeechRecognizer\src\index.html
+- 8087 in greta-gpl-grimaldi_ASAPnASR\auxiliary\SpeechRecognizer\src\greta\auxiliary\asr\SpeechRecognizer.java
+- OSC.jar connection in modular.xml
+
+Scenario planner in: greta-gpl-grimaldi_ASAPnASR\bin\Common\Data\FlipperResources\templates\example.xml
+Scenario FML scripts in: greta-gpl-grimaldi_ASAPnASR\bin\Common\Data\FlipperResources\fmltemplates

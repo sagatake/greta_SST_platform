@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<fml-apml>
+	<bml>
+		<speech id="s1" start="0.0" language="english" voice="marytts" type="SAPI4" text="">
+			<description level="1" type="gretabml">
+				<reference>tmp/from-fml-apml.pho</reference>
+			</description>
+    
+            
+ 
+            <tm id="tm0"/>
+                Thank you for waiting. Here is your result.
+            <tm id="tm1"/>
+                Positive feedback
+            <tm id="tm2"/>
+                Negative feedback
+                
+            <tm id="tm3"/>
+                This is the end of SST session. Thank you for joining. To do another session, please restart the system.
+            
+ 
+            <boundary type="LL" id="b1" start="s1:tm1" end="s1:tm1+0.75"/>
+            <boundary type="LL" id="b2" start="s1:tm2" end="s1:tm2+0.75"/>
+            <boundary type="LL" id="b3" start="s1:tm3" end="s1:tm3+3.00"/>
+        
+		</speech>
+	</bml>
+</fml-apml>
+        

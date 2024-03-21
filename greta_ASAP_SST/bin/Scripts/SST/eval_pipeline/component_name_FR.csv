@@ -1,0 +1,29 @@
+task,component,translated
+FAVOR,eye-contact,l'aille contact
+FAVOR,body-dist-direct,la direction et la distance corporelle
+FAVOR,facial-expression,l'expression faciale
+FAVOR,voice-variation,le changement de voix
+FAVOR,clarity,la clarté
+FAVOR,fluency,l'aisance
+FAVOR,social-appropriateness,la clarté et l'émotion dans ta demande
+LISTEN,eye-contact,l'aille contact
+LISTEN,body-dist-direct,la direction et la distance corporelle 
+LISTEN,facial-expression,l'expression faciale
+LISTEN,voice-variation,le changement de voix
+LISTEN,clarity,la clarté
+LISTEN,fluency,l'aisance
+LISTEN,social-appropriateness,une écoute attentive
+REFUSE,eye-contact,l'aille contact
+REFUSE,body-dist-direct,la direction et la distance corporelle
+REFUSE,facial-expression,l'expression faciale
+REFUSE,voice-variation,le changement de voix
+REFUSE,clarity,la clarté
+REFUSE,fluency,l'aisance
+REFUSE,social-appropriateness,ta bonne foi
+TELL,eye-contact,l'aille contact
+TELL,body-dist-direct,la direction et la distance corporelle
+TELL,facial-expression,l'expression faciale
+TELL,voice-variation,le changement de voix
+TELL,clarity,la clarté
+TELL,fluency,l'aisance
+TELL,social-appropriateness,ton nattention à la réponse

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<fml-apml>
+	<bml>
+		<speech id="s1" start="0.0" language="french" voice="marytts" type="SAPI4" text="">
+		
+			<description level="1" type="gretabml">
+				<reference>tmp/from-fml-apml.pho</reference>
+			</description>
+ 
+            <tm id="tm0"/>
+                Je vois. 
+            <tm id="tm1"/>
+                Mais je dois partir maintenant.  
+            <tm id="tm2"/>
+                J'ai un rendez-vous m&eacute;dical.  
+            <tm id="tm3"/>
+                Peux-tu emmener ces papiers &agrave; ma place s'il-te-plait?
+ 
+            <boundary type="LL" id="b1" start="s1:tm1" end="s1:tm1+0.75"/>
+            <boundary type="LL" id="b2" start="s1:tm2" end="s1:tm2+0.75"/>
+            <boundary type="LL" id="b3" start="s1:tm3" end="s1:tm3+1.0"/>
+        
+		</speech>
+	</bml>
+</fml-apml>

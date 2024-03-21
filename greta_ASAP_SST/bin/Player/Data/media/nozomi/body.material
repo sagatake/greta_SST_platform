@@ -1,0 +1,7 @@
+import * from "autodesk.material"
+
+material nozomi_Autodesk_Body : base {
+	set_texture_alias diffuseMap nozomi/color.jpg
+	set_texture_alias celShadingMap nozomi/color.jpg
+}
+

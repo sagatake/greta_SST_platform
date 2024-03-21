@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<fml-apml>
+	<bml>
+		<speech id="s1" start="0.0" language="french" voice="marytts" type="SAPI4" text="">
+			<description level="1" type="gretabml">
+				<reference>tmp/from-fml-apml.pho</reference>
+			</description>
+				
+			<tm id="tm1"/>
+				En plus des premières pensées que vous avez mentionnées,
+			<tm id="tm2"/>
+				avez-vous une autre idée?
+			<tm id="tm3"/>
+				Si oui,
+			<tm id="tm4"/>
+				 essayez de la relier à vos premières pensées en utilisant un mais...
+			<tm id="tm5"/>
+
+			<boundary type="LL" id="b1" start="s1:tm3" end="s1:tm3+0.75"/>
+			
+			
+		</speech>
+	</bml>
+</fml-apml>
+
+

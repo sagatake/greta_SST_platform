@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<fml-apml>
+	<bml>
+		<speech id="s1" start="0.0" language="english" voice="marytts" type="SAPI4" text="">
+
+			<description level="1" type="gretabml">
+				<reference>tmp/from-fml-apml.pho</reference>
+			</description>
+ 
+            <tm id="tm0"/>
+                 Oh! you know that. 
+				 
+            <tm id="tm1"/>
+				 Currently, I live in Sakai, but  I used to live in Kishiwada city, the Danjiri city. 
+				 
+            <tm id="tm2"/>
+				 I myself go back to my hometown every year to see the festival at christmas. 
+				 
+            <tm id="tm3"/>
+				 Since I grow up with Danjiri, the festival always brings back good memories of the time I spent with my family. 
+				 
+            <tm id="tm4"/>
+				 Do you have any memories of any kind of festivals?
+				 
+            <tm id="tm5"/>
+				 If you have, how is it like?
+				 
+            <tm id="tm6"/>				 
+
+            <boundary type="LL" id="b1" start="s1:tm1" end="s1:tm1+0.75"/>
+            <boundary type="LL" id="b2" start="s1:tm2" end="s1:tm2+0.75"/>
+            <boundary type="LL" id="b3" start="s1:tm3" end="s1:tm3+0.75"/>
+            <boundary type="LL" id="b4" start="s1:tm4" end="s1:tm4+0.75"/>
+            <boundary type="LL" id="b5" start="s1:tm5" end="s1:tm5+0.75"/>
+        
+		</speech>
+	</bml>
+</fml-apml>
+        

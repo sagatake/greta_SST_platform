@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<bml>
+<speech id="s1" language="english" start="0.0" text="" type="SAPI4" voice="marytts">
+<description level="1" type="gretabml">
+<reference>tmp/from-fml-apml.pho</reference>
+</description>
+<tm id="0"/>That
+<tm id="1"/>right
+<tm id="2"/>now
+<tm id="3"/>is
+<tm id="4"/>the
+<tm id="5"/>open
+<tm id="6"/>sewer
+<tm id="7"/>for
+<tm id="8"/>our
+<tm id="9"/>industrial
+<tm id="10"/>civilization
+<tm id="11"/>as
+<tm id="12"/>it's
+<tm id="13"/>currently
+<tm id="14"/>organized
+</speech>
+<gazeShift end="10.0" id="gaze1" modality="TORSO" offsetAngle="30" offsetDirection="DOWN" start="1.0" target="gaze_target" type="GAZE"/>
+<gesture end="s1:tm14" id="1" lexeme="LowLf1" start="s1:tm8">
+<description priority="1" type="gretabml">
+<reference>beat=LowLf1</reference>
+<intensity>1.000</intensity>`
+<SPC.value>0.646</SPC.value>
+<TMP.value>-0.400</TMP.value>
+<FLD.value>0.000</FLD.value>
+<PWR.value>0.000</PWR.value>
+<REP.value>0.000</REP.value>
+<OPN.value>0.000</OPN.value>
+<TEN.value>0.000</TEN.value>
+</description>
+</gesture>
+</bml>

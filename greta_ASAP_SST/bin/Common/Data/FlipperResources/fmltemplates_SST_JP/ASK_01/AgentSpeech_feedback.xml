@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<fml-apml>
+	<bml>
+		<speech id="s1" start="0.0" language="french" voice="marytts" type="SAPI4" text="">
+			<description level="1" type="gretabml">
+				<reference>tmp/from-fml-apml.pho</reference>
+			</description>
+ 
+            <tm id="tm0"/>
+                Merci d'avoir patienté, voilà tes résultats.
+
+            <tm id="tm1"/>
+                Je pense que clarté était bien. Si vous arrivez à gérer clarté, vous pourrez expliquer pourquoi tu fais cette demande . Ainsi, vous pourrez avoir une communication réussie!
+
+            <tm id="tm2"/>
+                La communication serait meilleure si vous accordiez un peu plus d'attention à expression faciale.Vous pouvez dire spécifiquement comment tu te sens , ce qui rendrait la conversation plus confortable pour vous et l'interlocuteur.Si pour vous, l'amélioration de expression faciale semble difficile, je vous conseille de présenter un visage trouble en abaissant l'extremite exterieur des sourcils.
+
+            <tm id="tm3"/>
+                C'est la fin de notre session d'entraînement. Merci encore d?avoir participé.
+
+            <tm id="tm4"/>            
+ 
+            <boundary type="LL" id="b1" start="s1:tm1" end="s1:tm1+0.75"/>
+            <boundary type="LL" id="b2" start="s1:tm2" end="s1:tm2+0.75"/>
+            <boundary type="LL" id="b3" start="s1:tm3" end="s1:tm3+3.00"/>
+        
+		</speech>
+	</bml>
+</fml-apml>

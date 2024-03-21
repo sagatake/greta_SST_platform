@@ -1,0 +1,29 @@
+task,component,translated
+FAVOR,eye-contact,eye contact
+FAVOR,body-dist-direct,body distance and direction
+FAVOR,facial-expression,facial expression
+FAVOR,voice-variation,voice variation
+FAVOR,clarity,clarity
+FAVOR,fluency,fluency
+FAVOR,social-appropriateness,clear and emotional request
+LISTEN,eye-contact,eye contact
+LISTEN,body-dist-direct,body distance and direction
+LISTEN,facial-expression,facial expression
+LISTEN,voice-variation,voice variation
+LISTEN,clarity,clarity
+LISTEN,fluency,fluency
+LISTEN,social-appropriateness,attentive listening
+REFUSE,eye-contact,eye contact
+REFUSE,body-dist-direct,body distance and direction
+REFUSE,facial-expression,facial expression
+REFUSE,voice-variation,voice variation
+REFUSE,clarity,clarity
+REFUSE,fluency,fluency
+REFUSE,social-appropriateness,decline with sincerity
+TELL,eye-contact,eye contact
+TELL,body-dist-direct,body distance and direction
+TELL,facial-expression,facial expression
+TELL,voice-variation,voice variation
+TELL,clarity,clarity
+TELL,fluency,fluency
+TELL,social-appropriateness,attention to response
